@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:vm="clr-namespace:eCourses.Mobile.ViewModels.MyCourses" 
+             xmlns:converters="clr-namespace:eCourses.Mobile.Converters"
+             x:Class="eCourses.Mobile.Views.MyCourses.UsersBoughtCoursesPage"
+             mc:Ignorable="d"
+             Title="Purchased courses">
+    <ContentPage.BindingContext>
+        <vm:UsersBoughtCoursesVM/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <converters:ImageConverter x:Key="ImageConverter"></converters:ImageConverter>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="BoughtCourses" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="True" >
+                <Label Text="You haven't purchased any course..."
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       FontSize="20"></Label>
+                <Image Source="empty.png"></Image>
+            </StackLayout>
+            <ListView x:Name="CourseList"  ItemsSource="{Binding courseList}" ItemSelected="BoughtCourse_ItemSelected" IsVisible="False">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" Orientation="Horizontal">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="300"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Grid.Row="0" Grid.Column="0">
+                                        <Frame 
+                                            Padding="0"
+                                            WidthRequest="100"
+                                            HeightRequest="100" 
+                                            CornerRadius="100"
+                                            IsClippedToBounds="True"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            BorderColor="Black">
+                                            <Image Source="{Binding Course.Image, Converter={StaticResource ImageConverter}}"
+                                                   Aspect="AspectFill">
+                                            </Image>
+                                        </Frame>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="1">
+                                        <Label Text="{Binding Course.Name}" 
+                                               LineBreakMode="NoWrap" 
+                                                FontAttributes="Bold"
+                                               Padding="10, 10, 0, 0"
+                                             
+                                               FontSize="16" />
+
+                                        <Label 
+                                                LineBreakMode="NoWrap" 
+                                                Padding="10, 10, 0, 0">
+
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <FormattedString.Spans>
+                                                        <Span Text="Instructor:" FontSize="12" TextColor="Black"/>
+                                                        <Span Text=" "></Span>
+                                                        <Span Text="{Binding Course.User.FirstName}" FontSize="12" TextColor="Black"/>
+                                                        <Span Text=" "></Span>
+                                                        <Span Text="{Binding Course.User.LastName}" FontSize="12" TextColor="Black"/>
+                                                    </FormattedString.Spans>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+
+                                        <Label 
+                                                LineBreakMode="NoWrap" 
+                                                Padding="10, 0, 0, 0">
+
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <FormattedString.Spans>
+                                                        <Span Text="Language:" FontSize="12" TextColor="Black"/>
+                                                        <Span Text=" "></Span>
+                                                        <Span Text="{Binding Course.Language}" FontSize="12" TextColor="Black"/>
+                                                    </FormattedString.Spans>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                    </StackLayout>
+                                    <ImageButton Grid.Row="0" Grid.Column="2"
+                                                Source="{Binding IsLikedImage}"
+                                                HorizontalOptions="End"
+                                                WidthRequest="30"
+                                                HeightRequest="30"
+                                                Command="{Binding LikeCommand}">
+                                    </ImageButton>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

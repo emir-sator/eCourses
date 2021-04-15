@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:eCourses.Mobile.ViewModels.Course" 
+             xmlns:converters="clr-namespace:eCourses.Mobile.Converters"
+             mc:Ignorable="d"
+             xmlns:system="clr-namespace:System;assembly=netstandard" 
+             xmlns:o="clr-namespace:Octane.Xamarin.Forms.VideoPlayer;assembly=Octane.Xamarin.Forms.VideoPlayer" xmlns:rating="clr-namespace:Syncfusion.SfRating.XForms;assembly=Syncfusion.SfRating.XForms"
+             x:Class="eCourses.Mobile.Views.Course.CourseDetailPage">
+
+    <ContentPage.BindingContext>
+        <vm:CourseDetailVM />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="ImageConverter"></converters:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Margin="20">
+                <Label Text="Rating:" FontSize="14" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center" ></Label>
+                <rating:SfRating 
+                    Value="{Binding Rating}"
+                    Margin="0, 5"
+                    ItemCount="5"
+                    Precision="Exact"
+                    HorizontalOptions="Center"
+                    ReadOnly="True"
+                    />
+            </StackLayout>
+            
+            <Label HorizontalOptions="StartAndExpand" Padding="0, 5, 0, 0" Margin="20,0,20,0"  FontSize="20">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="Course: " FontAttributes="Bold"></Span>
+                            <Span Text=" "></Span>
+                            <Span Text="{Binding Course.Name}"></Span>
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <StackLayout Orientation="Horizontal">
+                <Label HorizontalOptions="StartAndExpand" Padding="0,5,0,0" Margin="20,0,0,0" >
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Instructor: " FontAttributes="Bold"></Span>
+                                <Span Text="{Binding Course.User.FirstName }" FontSize="14" TextColor="Black"/>
+                                <Span Text=" "></Span>
+                                <Span Text="{Binding Course.User.LastName}" FontSize="14" TextColor="Black"/>
+                                
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Button Text="View profile" HeightRequest="30" WidthRequest="100" Margin="0,0,20,0"
+                    BackgroundColor="Teal" TextColor="Black" FontAttributes="Bold" FontSize="10"></Button>
+            </StackLayout>
+            
+            
+            <Label HorizontalOptions="StartAndExpand" Padding="0,5,0,0" Margin="20,0,20,0" >
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="Language: " FontAttributes="Bold"></Span>
+                            <Span Text="{Binding Course.Language}" FontSize="14" TextColor="Black"/>
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+           
+            <Label HorizontalOptions="StartAndExpand"
+                   Margin="20, 0, 20, 0"
+                   Padding="0, 5, 0,0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="Description: " FontSize="14" FontAttributes="Bold"></Span>
+                            <Span Text="{x:Static system:Environment.NewLine}"/>
+                            <Span Text="{Binding Course.Description, StringFormat='{0:F0}'}" FontSize="14"/>
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label HorizontalOptions="StartAndExpand"
+                   Margin="20, 0, 20, 0"
+                   Padding="0, 5, 0, 0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="Enrolled students:" FontSize="14" FontAttributes="Bold"></Span>
+                            <Span Text=" "></Span>
+                            <Span Text="{Binding Total}" FontSize="14"></Span>
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label HorizontalOptions="StartAndExpand"
+                   Margin="20, 0, 20, 0"
+                   Padding="0, 5, 0, 0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="Price: " FontSize="14" FontAttributes="Bold"></Span>
+                            <Span Text=" "></Span>
+                            <Span Text="{Binding Course.Price, StringFormat='{0:F0} $'}" FontSize="16"/>
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <o:VideoPlayer x:Name="videoPlayer" Source="{Binding Course.URL}" AutoPlay="False" Margin="20,0,20,0" IsVisible="false"/>
+             
+            <Button x:Name="btnBuy" Command="{Binding BuyCommand}" Text="Buy" HeightRequest="45" Padding="10, 0, 10, 0" 
+                    BackgroundColor="Teal" TextColor="Black" FontSize="Medium" Margin="20,0,20,0" IsVisible="true"></Button>
+            <Button x:Name="btnPreview" Command="{Binding WatchCommand}" Text="Watch video preview" HeightRequest="45" Padding="10, 0, 10, 0" 
+                    BackgroundColor="Teal" TextColor="Black" FontSize="Medium" Margin="20,0,20,0" IsVisible="true"></Button>
+
+
+            <StackLayout Margin="20,2,0,0" Grid.Row="2" Grid.ColumnSpan="2" >
+                <Label Text="List of lectures" TextColor="Black" FontSize="16" VerticalTextAlignment="Start" HorizontalTextAlignment="Start" FontAttributes="Bold"></Label>
+            </StackLayout>
+
+            <Label Text="Choose section: " Margin="20,0,20,0" FontSize="12"></Label>
+            <Picker  ItemsSource="{Binding NewsectionList}" SelectedItem="{Binding SelectedSection}" ItemDisplayBinding="{Binding SectionNumber}" Margin="20,0,20,0"></Picker>
+
+
+            <ListView ItemsSource="{Binding videoLectureList}"  Margin="20,0,20,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" Orientation="Horizontal">
+                                <StackLayout Orientation="Vertical">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="25*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label 
+                                           Grid.Row="0"
+                                           Grid.Column="0"
+                                           FontSize="16"
+                                           Padding="10, 0, 0, 0"
+                                           LineBreakMode="NoWrap">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <FormattedString.Spans>
+                                                        <Span Text="  • " />
+                                                        <Span Text="{Binding LectureName}" FontAttributes="Bold" />
+                                                    </FormattedString.Spans>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                    </Grid>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

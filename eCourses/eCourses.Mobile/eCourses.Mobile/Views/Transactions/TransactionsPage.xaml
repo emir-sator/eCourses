@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:vm="clr-namespace:eCourses.Mobile.ViewModels.Transactions"
+             x:Class="eCourses.Mobile.Views.Transactions.TransactionsPage"
+             Title="Transactions">
+
+    
+
+    <ContentPage.BindingContext>
+        <vm:TransactionsVM></vm:TransactionsVM>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="My transactions" Margin="20" FontSize="24" FontAttributes="Bold"></Label>
+            
+            <StackLayout>
+                <Label Text="From:" Margin="20,0,20,0"  FontAttributes="Bold"></Label>
+                <DatePicker Date="{Binding From}" Margin="20,0,20,10"  HorizontalOptions="StartAndExpand"></DatePicker>
+                <Label Text="To:" Margin="20,0,20,0" FontAttributes="Bold"></Label>
+                <DatePicker Date="{Binding To}" Margin="20,0,20,0" HorizontalOptions="StartAndExpand" ></DatePicker>
+            </StackLayout>
+
+            <ListView ItemsSource="{Binding TransactionList}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" Orientation="Horizontal">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="300"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                   
+                                    <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="1">
+                                        <Label Text="{Binding CourseName}" 
+                                               LineBreakMode="NoWrap" 
+                                                FontAttributes="Bold"
+                                               Padding="10, 10, 0, 0"
+                                             
+                                               FontSize="16" />
+
+                                        <Label 
+                                                LineBreakMode="NoWrap" 
+                                                Padding="10, 10, 0, 0">
+
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <FormattedString.Spans>
+                                                        <Span Text="Transactiom date:" FontSize="12" TextColor="Black"/>
+                                                        <Span Text=" "></Span>
+                                                        <Span Text="{Binding TransactionDateString}" FontSize="12" TextColor="Black"/>
+                                                    </FormattedString.Spans>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <Label Text="{Binding Price, StringFormat='Price: {0:F0} $'}"
+                                               LineBreakMode="NoWrap"
+                                               Padding="10, 0, 0, 0"
+                                               FontSize="12" />
+                                    </StackLayout>
+                                    
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

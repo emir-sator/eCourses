@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:vm="clr-namespace:eCourses.Mobile.ViewModels.Account" 
+             xmlns:converters="clr-namespace:eCourses.Mobile.Converters"
+             x:Class="eCourses.Mobile.Views.Account.LoginPage">
+    <ContentPage.BindingContext>
+        <vm:LoginVM/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="ImageConverter" />
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Teal"></Setter>
+                
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Padding="80,0,80,0"  HorizontalOptions="FillAndExpand">
+            <Image Source="logo.jpg" HorizontalOptions="Center" WidthRequest="300"
+                                     HeightRequest="300" ></Image>
+            <Label Text="Username"/>
+            <Entry Text="{Binding Username}"/>
+            <Label Text="Password"/>
+            <Entry Text="{Binding Password}" IsPassword="True"/>
+            <StackLayout>
+                <Button Text="Login" Command="{Binding LoginCommand}" Style="{StaticResource buttonStyle}"/>
+                <Button Text="Register" Command="{Binding RegisterCommand}" Style="{StaticResource buttonStyle}" Margin="0,20,0,0"></Button>
+            </StackLayout>
+
+        </StackLayout>
+       
+    </ContentPage.Content>
+</ContentPage>

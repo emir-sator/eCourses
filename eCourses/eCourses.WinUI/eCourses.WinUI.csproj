@@ -1,0 +1,666 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F0B76FC4-638C-4BEF-8A4B-67E4BB2532E1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>eCourses.WinUI</RootNamespace>
+    <AssemblyName>eCourses.WinUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\eCourses.WebAPI\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\eCourses.WebAPI\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Flurl, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\eCourses.WebAPI\packages\Flurl.3.0.1\lib\net461\Flurl.dll</HintPath>
+    </Reference>
+    <Reference Include="Flurl.Http, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\eCourses.WebAPI\packages\Flurl.Http.3.0.1\lib\net461\Flurl.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\eCourses.WebAPI\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\eCourses.WebAPI\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\eCourses.WebAPI\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\eCourses.WebAPI\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\eCourses.WebAPI\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\eCourses.WebAPI\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\eCourses.WebAPI\packages\WindowsAPICodePack-Core.1.1.1\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\eCourses.WebAPI\packages\WindowsAPICodePack-Shell.1.1.1\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGrid, Version=9.22.0.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <HintPath>..\eCourses.WebAPI\packages\SendGrid.9.22.0\lib\net452\SendGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="StarkbankEcdsa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\eCourses.WebAPI\packages\starkbank-ecdsa.1.2.0\lib\net452\StarkbankEcdsa.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\eCourses.WebAPI\packages\System.Configuration.ConfigurationManager.5.0.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\eCourses.WebAPI\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\eCourses.WebAPI\packages\System.Security.AccessControl.5.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\eCourses.WebAPI\packages\System.Security.Permissions.5.0.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\eCourses.WebAPI\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\eCourses.WebAPI\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APIService.cs" />
+    <Compile Include="eCoursesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>eCoursesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Categories\CategoryEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Categories\CategoryEdit.Designer.cs">
+      <DependentUpon>CategoryEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Categories\CategoryAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Categories\CategoryAdd.Designer.cs">
+      <DependentUpon>CategoryAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Categories\CategoryList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Categories\CategoryList.Designer.cs">
+      <DependentUpon>CategoryList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Courses\CourseAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Courses\CourseAdd.Designer.cs">
+      <DependentUpon>CourseAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Courses\CourseAddCategoryForSubcategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Courses\CourseAddCategoryForSubcategory.Designer.cs">
+      <DependentUpon>CourseAddCategoryForSubcategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Courses\CourseAddSubcategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Courses\CourseAddSubcategory.Designer.cs">
+      <DependentUpon>CourseAddSubcategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Courses\CourseAddVideoLecture.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Courses\CourseAddVideoLecture.Designer.cs">
+      <DependentUpon>CourseAddVideoLecture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Courses\CourseEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Courses\CourseEdit.Designer.cs">
+      <DependentUpon>CourseEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Courses\CourseList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Courses\CourseList.Designer.cs">
+      <DependentUpon>CourseList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Courses\CourseListInstructor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Courses\CourseListInstructor.Designer.cs">
+      <DependentUpon>CourseListInstructor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Courses\CourseReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Courses\CourseReport.Designer.cs">
+      <DependentUpon>CourseReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Courses\CourseSaleList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Courses\CourseSaleList.Designer.cs">
+      <DependentUpon>CourseSaleList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Courses\CoursesPerSubcategoriesReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Courses\CoursesPerSubcategoriesReport.Designer.cs">
+      <DependentUpon>CoursesPerSubcategoriesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Courses\CourseSalesBetweenDatesReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Courses\CourseSalesBetweenDatesReport.Designer.cs">
+      <DependentUpon>CourseSalesBetweenDatesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Courses\CourseTop3ListReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Courses\CourseTop3ListReport.Designer.cs">
+      <DependentUpon>CourseTop3ListReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Subcategories\CategoryAddForSubcategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Subcategories\CategoryAddForSubcategory.Designer.cs">
+      <DependentUpon>CategoryAddForSubcategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Subcategories\SubategoryAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Subcategories\SubategoryAdd.Designer.cs">
+      <DependentUpon>SubategoryAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Subcategories\SubcategoryList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Subcategories\SubcategoryList.Designer.cs">
+      <DependentUpon>SubcategoryList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\EditProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\EditProfile.Designer.cs">
+      <DependentUpon>EditProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\Top3UsersWithMostPurchases.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Top3UsersWithMostPurchases.Designer.cs">
+      <DependentUpon>Top3UsersWithMostPurchases.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\UserAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\UserAdd.Designer.cs">
+      <DependentUpon>UserAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\ChangePassword.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\UserEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\UserEdit.Designer.cs">
+      <DependentUpon>UserEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\UserEditOnUsernameClick.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\UserEditOnUsernameClick.Designer.cs">
+      <DependentUpon>UserEditOnUsernameClick.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\UserList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\UserList.Designer.cs">
+      <DependentUpon>UserList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\UserReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\UserReport.Designer.cs">
+      <DependentUpon>UserReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\CurrentCourse.cs" />
+    <Compile Include="Helper\FileHelper.cs" />
+    <Compile Include="Helper\ImageHelper.cs" />
+    <Compile Include="Helper\PanelHelper.cs" />
+    <Compile Include="Helper\SignedInUser.cs" />
+    <Compile Include="Main\frmAdminIndex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\frmAdminIndex.Designer.cs">
+      <DependentUpon>frmAdminIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\frmInstructorIndex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\frmInstructorIndex.Designer.cs">
+      <DependentUpon>frmInstructorIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\frmLoginPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\frmLoginPage.Designer.cs">
+      <DependentUpon>frmLoginPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Welcome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\Welcome.Designer.cs">
+      <DependentUpon>Welcome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\DataForCourseTop3Report.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataForCourseTop3Report.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DataForCourseTop3Report.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataForCourseTop3Report.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DataForCourseTop3Report.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataForCourseTop3Report.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DataForReport.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataForReport.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DataForReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataForReport.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DataForReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataForReport.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DataForTop3UsersReport.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataForTop3UsersReport.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DataForTop3UsersReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataForTop3UsersReport.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DataForTop3UsersReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataForTop3UsersReport.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\GetCoursesBySubcategory_Result.cs">
+      <DependentUpon>DataForReport.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\GetTop3Courses_Result.cs">
+      <DependentUpon>DataForCourseTop3Report.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Top3UsersWithMostCoursePurchases_Result.cs">
+      <DependentUpon>DataForTop3UsersReport.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="_150031DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_150031DataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\Categories\CategoryAdd.resx">
+      <DependentUpon>CategoryAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Categories\CategoryEdit.resx">
+      <DependentUpon>CategoryEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Categories\CategoryList.resx">
+      <DependentUpon>CategoryList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Courses\CourseAdd.resx">
+      <DependentUpon>CourseAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Courses\CourseAddCategoryForSubcategory.resx">
+      <DependentUpon>CourseAddCategoryForSubcategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Courses\CourseAddSubcategory.resx">
+      <DependentUpon>CourseAddSubcategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Courses\CourseAddVideoLecture.resx">
+      <DependentUpon>CourseAddVideoLecture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Courses\CourseEdit.resx">
+      <DependentUpon>CourseEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Courses\CourseList.resx">
+      <DependentUpon>CourseList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Courses\CourseListInstructor.resx">
+      <DependentUpon>CourseListInstructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Courses\CourseReport.resx">
+      <DependentUpon>CourseReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Courses\CourseSaleList.resx">
+      <DependentUpon>CourseSaleList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Courses\CoursesPerSubcategoriesReport.resx">
+      <DependentUpon>CoursesPerSubcategoriesReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Courses\CourseSalesBetweenDatesReport.resx">
+      <DependentUpon>CourseSalesBetweenDatesReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Courses\CourseTop3ListReport.resx">
+      <DependentUpon>CourseTop3ListReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Subcategories\CategoryAddForSubcategory.resx">
+      <DependentUpon>CategoryAddForSubcategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Subcategories\SubategoryAdd.resx">
+      <DependentUpon>SubategoryAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Subcategories\SubcategoryList.resx">
+      <DependentUpon>SubcategoryList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\EditProfile.resx">
+      <DependentUpon>EditProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Top3UsersWithMostPurchases.resx">
+      <DependentUpon>Top3UsersWithMostPurchases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\UserAdd.resx">
+      <DependentUpon>UserAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\UserEdit.resx">
+      <DependentUpon>UserEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\UserEditOnUsernameClick.resx">
+      <DependentUpon>UserEditOnUsernameClick.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\UserList.resx">
+      <DependentUpon>UserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\UserReport.resx">
+      <DependentUpon>UserReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\frmAdminIndex.resx">
+      <DependentUpon>frmAdminIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\frmInstructorIndex.resx">
+      <DependentUpon>frmInstructorIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\frmLoginPage.resx">
+      <DependentUpon>frmLoginPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Welcome.resx">
+      <DependentUpon>Welcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reports\CourseReport.rdlc" />
+    <EmbeddedResource Include="Reports\CoursesPerCategoryReport.rdlc" />
+    <EmbeddedResource Include="Reports\CourseSalesReport.rdlc" />
+    <EmbeddedResource Include="Reports\CoursesTop3Report.rdlc" />
+    <EmbeddedResource Include="Reports\Top3UsersWithMostCoursePurchases.rdlc" />
+    <EmbeddedResource Include="Reports\UserReport.rdlc" />
+    <None Include="eCoursesDataSet.xsc">
+      <DependentUpon>eCoursesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="eCoursesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>eCoursesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="eCoursesDataSet.xss">
+      <DependentUpon>eCoursesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\eCourses.Model.MBuyCourse.datasource" />
+    <None Include="Properties\DataSources\eCourses.Model.MCourse.datasource" />
+    <None Include="Properties\DataSources\eCourses.Model.MUser.datasource" />
+    <None Include="Properties\DataSources\eCourses.Model.ViewModels.CourseListVM.datasource" />
+    <None Include="Properties\DataSources\eCourses.Model.ViewModels.CourseSalesVM.datasource" />
+    <None Include="Properties\DataSources\eCourses.Model.ViewModels.UserListVM.datasource" />
+    <None Include="Properties\DataSources\eCourses.WinUI.Reports.GetCoursesBySubcategory_Result.datasource" />
+    <None Include="Properties\DataSources\eCourses.WinUI.Reports.GetTop3Courses_Result.datasource" />
+    <None Include="Properties\DataSources\eCourses.WinUI.Reports.Top3UsersWithMostCoursePurchases_Result.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EntityDeploy Include="Reports\DataForReport.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DataForReport.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Reports\DataForCourseTop3Report.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DataForCourseTop3Report.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Reports\DataForCourseTop3Report.edmx.diagram">
+      <DependentUpon>DataForCourseTop3Report.edmx</DependentUpon>
+    </None>
+    <None Include="Reports\DataForReport.edmx.diagram">
+      <DependentUpon>DataForReport.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="Reports\DataForTop3UsersReport.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DataForTop3UsersReport.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Reports\DataForTop3UsersReport.edmx.diagram">
+      <DependentUpon>DataForTop3UsersReport.edmx</DependentUpon>
+    </None>
+    <None Include="_150031DataSet.xsc">
+      <DependentUpon>_150031DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_150031DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_150031DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_150031DataSet.xss">
+      <DependentUpon>_150031DataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\eCourses.Model\eCourses.Model.csproj">
+      <Project>{ed749fed-20c6-459d-94bc-369f8b413452}</Project>
+      <Name>eCourses.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Reports\DataForCourseTop3Report.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataForCourseTop3Report.edmx</DependentUpon>
+      <LastGenOutput>DataForCourseTop3Report.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\DataForCourseTop3Report.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataForCourseTop3Report.edmx</DependentUpon>
+      <LastGenOutput>DataForCourseTop3Report.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\DataForReport.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DataForReport.Context.cs</LastGenOutput>
+      <DependentUpon>DataForReport.edmx</DependentUpon>
+    </Content>
+    <Content Include="Reports\DataForReport.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataForReport.edmx</DependentUpon>
+      <LastGenOutput>DataForReport.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\DataForTop3UsersReport.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataForTop3UsersReport.edmx</DependentUpon>
+      <LastGenOutput>DataForTop3UsersReport.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\DataForTop3UsersReport.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataForTop3UsersReport.edmx</DependentUpon>
+      <LastGenOutput>DataForTop3UsersReport.cs</LastGenOutput>
+    </Content>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
+    if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

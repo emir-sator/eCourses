@@ -1,0 +1,140 @@
+﻿using eCourses.Mobile.Helpers;
+using eCourses.Mobile.ViewModels.SearchCourse;
+using eCourses.Model;
+using eCourses.Model.Request;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace eCourses.Mobile.ViewModels.MyCourses
+{
+    public class UsersBoughtCoursesDetailVM:BaseVM
+    {
+        private readonly APIService courseService = new APIService("Course");
+        private readonly APIService sectionService = new APIService("Section");
+        private readonly APIService lectureService = new APIService("VideoLecture");
+        private readonly APIService reviewService = new APIService("Review");
+        public ObservableCollection<MVideoLecture> videoLectureList { get; set; } = new ObservableCollection<MVideoLecture>();
+        public ObservableCollection<MSection> sectionList { get; set; } = new ObservableCollection<MSection>();
+
+        private MCourse _course;
+
+        public MCourse Course
+        {
+            get { return _course; }
+            set { SetProperty(ref _course,value); }
+        }
+
+        private int rating;
+        public int Rating
+        {
+            get { return rating; }
+            set { SetProperty(ref rating, value); }
+        }
+
+        private MCourseReview courseReview;
+        public MCourseReview CourseReview
+        {
+            get { return courseReview; }
+            set { SetProperty(ref courseReview, value); }
+        }
+
+    
+
+        MSection _selectedSection = null;
+        public MSection SelectedSection
+        {
+            get { return _selectedSection; }
+            set
+            {
+                SetProperty(ref _selectedSection, value);
+                GetLectures();
+
+            }
+        }
+        public UsersBoughtCoursesDetailVM()
+        {
+
+        }
+        public UsersBoughtCoursesDetailVM(MCourse course)
+        {
+            Course = course;
+            GetReview();
+
+
+        }
+
+        public async Task Init(CourseSearchRequest request= null)
+        {
+            videoLectureList.Clear();
+            try
+            {
+                
+                var lectures = await courseService.GetLectures<List<MVideoLecture>>(Course.CourseID, request);
+                foreach(var lecture in lectures)
+                {
+                    videoLectureList.Add(lecture);
+                }
+                if (sectionList.Count == 0)
+                {
+                    sectionList.Clear();
+                    var sections = await sectionService.Get<List<MSection>>(null);
+                    foreach (var section in sections)
+                    {
+                        sectionList.Add(section);
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        public async void GetReview()
+        {
+            await SetCourseReview(Course.CourseID);
+            Rating = courseReview != null ? courseReview.Rating : 0;
+        }
+
+        private async Task SetCourseReview(int CourseID)
+        {
+            var request = new ReviewSearchRequest()
+            {
+                CourseID = CourseID,
+                UserID = SignedInUser.User.UserID
+            };
+
+            var list = await reviewService.Get<List<MCourseReview>>(request);
+            if (list != null)
+                CourseReview = list.FirstOrDefault();
+        }
+    
+
+
+        public async void GetLectures()
+        {
+
+
+            if (SelectedSection != null)
+            {
+                VideoLectureSearchRequest search = new VideoLectureSearchRequest
+                {
+                    SectionID = _selectedSection.SectionID,
+                    CourseID = _course.CourseID
+                };
+                videoLectureList.Clear();
+                var lectures = await lectureService.Get<List<MVideoLecture>>(search);
+
+                foreach (var x in lectures)
+                {
+                    videoLectureList.Add(x);
+                }
+            }
+
+        }
+    }
+}
