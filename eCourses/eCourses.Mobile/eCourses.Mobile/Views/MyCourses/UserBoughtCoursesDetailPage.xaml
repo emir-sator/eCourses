@@ -17,7 +17,8 @@
         <converters:ImageConverter x:Key="ImageConverter"></converters:ImageConverter>
     </ContentPage.Resources>
 
-    <ContentPage.Content>
+
+    <ContentView>
         <StackLayout>
             <StackLayout Padding="10">
                 <Label Text="Rate this course!" FontSize="20" TextColor="Black"  HorizontalOptions="Center"></Label>
@@ -29,52 +30,54 @@
                     HorizontalOptions="Center"
                     ValueChanged="Course_RatingChanged" />
             </StackLayout>
-            <Label HorizontalOptions="Center"
+            <StackLayout >
+                <Label HorizontalOptions="Center"
                    FontSize="20">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <FormattedString.Spans>
-                            <Span Text="Course:" FontSize="20" TextColor="Black"/>
-                            <Span Text=" "></Span>
-                            <Span Text="{Binding Course.Name}" />
-                        </FormattedString.Spans>
-                    </FormattedString>
-                </Label.FormattedText>
-
-            </Label>
-            <Label HorizontalOptions="Center"
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Course:" FontSize="20" TextColor="Black"/>
+                                <Span Text=" "></Span>
+                                <Span Text="{Binding Course.Name}" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label HorizontalOptions="Center"
                    FontSize="14">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <FormattedString.Spans>
-                            <Span Text="Instructor:" FontSize="12" TextColor="Black"/>
-                            <Span Text=" "></Span>
-                            <Span Text="{Binding Course.User.FirstName}" FontSize="12" TextColor="Black"/>
-                            <Span Text=" "></Span>
-                            <Span Text="{Binding Course.User.LastName}" FontSize="12" TextColor="Black"/>
-                        </FormattedString.Spans>
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Instructor:" FontSize="12" TextColor="Black"/>
+                                <Span Text=" "></Span>
+                                <Span Text="{Binding Course.User.FirstName}" FontSize="12" TextColor="Black"/>
+                                <Span Text=" "></Span>
+                                <Span Text="{Binding Course.User.LastName}" FontSize="12" TextColor="Black"/>
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
 
-            <Frame 
+                <Frame 
                  Padding="0"
                  WidthRequest="100"
-                 HeightRequest="150" 
+                 HeightRequest="200" 
                  CornerRadius="100"
                  IsClippedToBounds="True"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
-                 BorderColor="Black">
-                <Image Source="{Binding Course.Image, Converter={StaticResource ImageConverter}}"
+                 BorderColor="Black"
+                    Margin="0,0,0,70">
+                    <Image Source="{Binding Course.Image, Converter={StaticResource ImageConverter}}"
                  Aspect="AspectFill">
-                </Image>
-            </Frame>
+                    </Image>
+                </Frame>
+            </StackLayout>
 
-            <Label Text="Choose section: " Margin="20,0,20,0" FontSize="12"></Label>
-            <Picker  ItemsSource="{Binding sectionList}" SelectedItem="{Binding SelectedSection}" ItemDisplayBinding="{Binding SectionNumber}" Margin="20,0,20,0"></Picker>
+            <Label Text="Choose section: " Margin="20,20,20,0" FontSize="12"></Label>
+            <Picker  ItemsSource="{Binding NewsectionList}" SelectedItem="{Binding SelectedSection}" ItemDisplayBinding="{Binding SectionNumber}" Margin="20,0,20,0"></Picker>
 
-            <ListView ItemsSource="{Binding videoLectureList}" ItemSelected="ListView_ItemSelected">
+            <ListView ItemsSource="{Binding videoLectureList}" ItemSelected="ListView_ItemSelected" Margin="20,0,20,0">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -82,7 +85,7 @@
                                 <StackLayout Orientation="Vertical">
                                     <Grid>
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="50" />
+                                            <RowDefinition Height="30" />
                                         </Grid.RowDefinitions>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="25*"/>
@@ -99,10 +102,8 @@
                                             <Label.FormattedText>
                                                 <FormattedString>
                                                     <FormattedString.Spans>
-                                                        <Span Text="{Binding LectureName}" FontAttributes="Bold" />
-                                                        <Span Text="{x:Static system:Environment.NewLine}" />
                                                         <Span Text="  • " />
-                                                        <Span Text="{Binding Length}" FontSize="12"/>
+                                                        <Span Text="{Binding LectureName}" FontAttributes="Bold" />
                                                     </FormattedString.Spans>
                                                 </FormattedString>
                                             </Label.FormattedText>
@@ -115,5 +116,6 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
-    </ContentPage.Content>
+    </ContentView>
+
 </ContentPage>

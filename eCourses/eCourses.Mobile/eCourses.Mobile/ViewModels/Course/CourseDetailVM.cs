@@ -25,7 +25,6 @@ namespace eCourses.Mobile.ViewModels.Course
         public ObservableCollection<CourseVM> InstructorList { get; set; } = new ObservableCollection<CourseVM>();
         public ObservableCollection<MSection> sectionList { get; set; } = new ObservableCollection<MSection>();
         public ObservableCollection<MSection> NewsectionList { get; set; } = new ObservableCollection<MSection>();
-        public ObservableCollection<MSection> ThirdsectionList { get; set; } = new ObservableCollection<MSection>();
 
         public CourseDetailVM()
         {

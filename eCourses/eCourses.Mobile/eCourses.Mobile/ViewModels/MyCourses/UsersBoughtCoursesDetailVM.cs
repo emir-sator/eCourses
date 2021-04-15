@@ -19,6 +19,7 @@ namespace eCourses.Mobile.ViewModels.MyCourses
         private readonly APIService reviewService = new APIService("Review");
         public ObservableCollection<MVideoLecture> videoLectureList { get; set; } = new ObservableCollection<MVideoLecture>();
         public ObservableCollection<MSection> sectionList { get; set; } = new ObservableCollection<MSection>();
+        public ObservableCollection<MSection> NewsectionList { get; set; } = new ObservableCollection<MSection>();
 
         private MCourse _course;
 
@@ -77,16 +78,35 @@ namespace eCourses.Mobile.ViewModels.MyCourses
                 foreach(var lecture in lectures)
                 {
                     videoLectureList.Add(lecture);
-                }
-                if (sectionList.Count == 0)
-                {
-                    sectionList.Clear();
-                    var sections = await sectionService.Get<List<MSection>>(null);
+
+                    var req = new SectionSearchRequest
+                    {
+                        SectionID = lecture.SectionID
+                    };
+
+
+                    var sections = await sectionService.Get<List<MSection>>(req);
+
+
                     foreach (var section in sections)
                     {
-                        sectionList.Add(section);
+                        if (lecture.SectionID == section.SectionID)
+                        {
+                            sectionList.Add(section);
+                        }
                     }
                 }
+
+                foreach (var x in sectionList)
+                {
+                    var DoesItContain = NewsectionList.Where(m => m.SectionID == x.SectionID).Any();
+                    if (DoesItContain == false)
+                    {
+                        NewsectionList.Add(x);
+                    }
+
+                }
+
             }
             catch
             {

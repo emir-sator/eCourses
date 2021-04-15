@@ -123,10 +123,15 @@ namespace eCourses.WebAPI.Service
             return false;
         }
 
+
         public async  Task<float> GetAverage(int CourseID)
         {
             var list = await _context.UserCourseReviews.Where(i => i.CourseID == CourseID).ToListAsync();
-            return (float)list.Average(i => i.Rating);
+            if (list.Count() != 0)
+            {
+                return (float)list.Average(i => i.Rating);
+            }
+            return 0;
         }
 
         public async Task<int> GetTotal(int CourseID)

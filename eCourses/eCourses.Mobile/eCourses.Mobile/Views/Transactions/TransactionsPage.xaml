@@ -14,23 +14,25 @@
     <ContentPage.Content>
         <StackLayout>
 
-            <Label Text="My transactions" Margin="20" FontSize="24" FontAttributes="Bold"></Label>
+            <Label Text="My transactions" Margin="20" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"></Label>
             
             <StackLayout>
-                <Label Text="From:" Margin="20,0,20,0"  FontAttributes="Bold"></Label>
-                <DatePicker Date="{Binding From}" Margin="20,0,20,10"  HorizontalOptions="StartAndExpand"></DatePicker>
-                <Label Text="To:" Margin="20,0,20,0" FontAttributes="Bold"></Label>
-                <DatePicker Date="{Binding To}" Margin="20,0,20,0" HorizontalOptions="StartAndExpand" ></DatePicker>
+                <Label Text="From:" Margin="20,0,20,0"  FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                <DatePicker Date="{Binding From}" Margin="20,0,20,10"  HorizontalOptions="Fill" ></DatePicker>
+                <Label Text="To:" Margin="20,0,20,0" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                <DatePicker Date="{Binding To}" Margin="20,0,20,0" HorizontalOptions="Fill" ></DatePicker>
             </StackLayout>
 
-            <ListView ItemsSource="{Binding TransactionList}">
+
+            <ListView ItemsSource="{Binding TransactionList}" Margin="20,40,20,0" HorizontalOptions="Fill">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Padding="10" Orientation="Horizontal">
+                            <StackLayout  Orientation="Horizontal" HorizontalOptions="Fill">
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto" />
+                                        
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto"/>
@@ -38,18 +40,18 @@
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                   
-                                    <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="1">
+
+                                    <StackLayout Orientation="Vertical" VerticalOptions="Center" Grid.Row="0" Grid.Column="1">
                                         <Label Text="{Binding CourseName}" 
                                                LineBreakMode="NoWrap" 
                                                 FontAttributes="Bold"
-                                               Padding="10, 10, 0, 0"
+                                               Padding="0, 10, 0, 0"
                                              
                                                FontSize="16" />
 
                                         <Label 
                                                 LineBreakMode="NoWrap" 
-                                                Padding="10, 10, 0, 0">
+                                                Padding="0, 10, 0, 0">
 
                                             <Label.FormattedText>
                                                 <FormattedString>
@@ -61,19 +63,19 @@
                                                 </FormattedString>
                                             </Label.FormattedText>
                                         </Label>
-                                        <Label Text="{Binding Price, StringFormat='Price: {0:F0} $'}"
+                                        <Label Text="{Binding Price, StringFormat='Price: ${0:F0}'}"
                                                LineBreakMode="NoWrap"
-                                               Padding="10, 0, 0, 0"
-                                               FontSize="12" />
+                                               Padding="0, 0, 0, 10"
+                                               FontSize="12" 
+                                               Margin="0,0,0,10"/>
                                     </StackLayout>
-                                    
+
                                 </Grid>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
