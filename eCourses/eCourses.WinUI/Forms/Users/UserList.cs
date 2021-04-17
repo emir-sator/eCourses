@@ -112,14 +112,9 @@ namespace eCourses.WinUI.Forms.Users
             }
         }
 
-        private void btnUserReport_Click(object sender, EventArgs e)
+        private void btnUserReport_Click_1(object sender, EventArgs e)
         {
             PanelHelper.SwapPanels(this.Parent, this, new UserReport(dgvUsers.DataSource as List<MUser>));
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            PanelHelper.SwapPanels(this.Parent, this, new Top3UsersWithMostPurchases());
         }
     }
 }

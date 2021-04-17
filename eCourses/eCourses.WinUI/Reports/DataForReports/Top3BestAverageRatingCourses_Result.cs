@@ -7,15 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace eCourses.WinUI.Reports
+namespace eCourses.WinUI.Reports.DataForReports
 {
     using System;
     
-    public partial class GetCoursesBySubcategory_Result
+    public partial class Top3BestAverageRatingCourses_Result
     {
         public string Name { get; set; }
         public string Language { get; set; }
-        public System.DateTime DateCreated { get; set; }
         public float Price { get; set; }
+        public Nullable<decimal> Average_rating { get; set; }
     }
 }

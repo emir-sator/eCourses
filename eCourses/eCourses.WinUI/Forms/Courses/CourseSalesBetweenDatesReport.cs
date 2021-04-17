@@ -1,5 +1,6 @@
 ﻿using eCourses.Model;
 using eCourses.Model.Request;
+using eCourses.WinUI.Forms.Reports;
 using eCourses.WinUI.Helper;
 using eCourses.WinUI.Main;
 using Microsoft.Reporting.WinForms;
@@ -55,9 +56,10 @@ namespace eCourses.WinUI.Forms.Courses
             this.reportViewer1.RefreshReport();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-            PanelHelper.SwapPanels(this.Parent, this, new Welcome());
+            PanelHelper.SwapPanels(this.Parent, this, new ReportsPage());
+
         }
     }
 }

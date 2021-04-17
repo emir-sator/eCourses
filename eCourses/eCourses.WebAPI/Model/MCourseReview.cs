@@ -11,6 +11,6 @@ namespace eCourses.WebAPI
         public int UserCourseReviewID { get; set; }
         public int UserID { get; set; }
         public int CourseID { get; set; }
-        public decimal Rating { get; set; }
+        public float Rating { get; set; }
     }
 }

@@ -13,8 +13,7 @@ namespace eCourses.WebAPI.Database
         public int UserCourseReviewID { get; set; }
         public int UserID { get; set; }
         public int CourseID { get; set; }
-        [Column(TypeName = "decimal(8,2)")]
-        public decimal Rating { get; set; }
+        public float Rating { get; set; }
         public virtual Course Course { get; set; }
         public virtual User User { get; set; }
     }

@@ -37,6 +37,7 @@ namespace eCourses.WinUI.Main
             this.btnCategories = new System.Windows.Forms.Button();
             this.btnSubcategory = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnReports = new System.Windows.Forms.Button();
             this.btnTransactions = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnEditAdminProfile = new System.Windows.Forms.Button();
@@ -145,6 +146,7 @@ namespace eCourses.WinUI.Main
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panel2.Controls.Add(this.btnReports);
             this.panel2.Controls.Add(this.btnTransactions);
             this.panel2.Controls.Add(this.btnHome);
             this.panel2.Controls.Add(this.btnEditAdminProfile);
@@ -156,6 +158,20 @@ namespace eCourses.WinUI.Main
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(156, 525);
             this.panel2.TabIndex = 5;
+            // 
+            // btnReports
+            // 
+            this.btnReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnReports.FlatAppearance.BorderSize = 0;
+            this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReports.Location = new System.Drawing.Point(2, 308);
+            this.btnReports.Name = "btnReports";
+            this.btnReports.Size = new System.Drawing.Size(153, 43);
+            this.btnReports.TabIndex = 10;
+            this.btnReports.Text = "Reports";
+            this.btnReports.UseVisualStyleBackColor = false;
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             // 
             // btnTransactions
             // 
@@ -192,7 +208,7 @@ namespace eCourses.WinUI.Main
             this.btnEditAdminProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditAdminProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditAdminProfile.ForeColor = System.Drawing.Color.Maroon;
-            this.btnEditAdminProfile.Location = new System.Drawing.Point(2, 311);
+            this.btnEditAdminProfile.Location = new System.Drawing.Point(3, 357);
             this.btnEditAdminProfile.Name = "btnEditAdminProfile";
             this.btnEditAdminProfile.Size = new System.Drawing.Size(153, 43);
             this.btnEditAdminProfile.TabIndex = 7;
@@ -298,5 +314,6 @@ namespace eCourses.WinUI.Main
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnlogout;
         private System.Windows.Forms.Button btnTransactions;
+        private System.Windows.Forms.Button btnReports;
     }
 }

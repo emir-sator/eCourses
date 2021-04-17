@@ -35,7 +35,7 @@ namespace eCourses.WinUI.Forms.Courses
             this.button1 = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,25 +80,26 @@ namespace eCourses.WinUI.Forms.Courses
             // 
             // bindingSource1
             // 
-            this.bindingSource1.DataSource = typeof(eCourses.WinUI.Reports.GetCoursesBySubcategory_Result);
+            this.bindingSource1.DataSource = typeof(eCourses.WinUI.Reports.DataForReports.GetCoursesBySubcategory_Result);
             // 
-            // button2
+            // btnBack
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(569, 441);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(108, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Back to homepage";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(604, 441);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(73, 33);
+            this.btnBack.TabIndex = 99;
+            this.btnBack.Text = "Back ";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // CoursesPerSubcategoriesReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
@@ -118,6 +119,6 @@ namespace eCourses.WinUI.Forms.Courses
         private System.Windows.Forms.Button button1;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnBack;
     }
 }

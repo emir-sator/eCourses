@@ -117,7 +117,7 @@ namespace eCourses.Mobile.ViewModels.MyCourses
         public async void GetReview()
         {
             await SetCourseReview(Course.CourseID);
-            Rating = courseReview != null ? courseReview.Rating : 0;
+            Rating = (decimal)(courseReview != null ? courseReview.Rating : 0);
         }
 
         private async Task SetCourseReview(int CourseID)

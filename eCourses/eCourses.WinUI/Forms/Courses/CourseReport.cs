@@ -1,4 +1,5 @@
 ﻿using eCourses.Model;
+using eCourses.WinUI.Forms.Reports;
 using eCourses.WinUI.Helper;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,6 @@ namespace eCourses.WinUI.Forms.Courses
     public partial class CourseReport : UserControl
     {
         private static MUser _user;
-        private static MCourse _course;
         private List<MCourse> _source;
         public CourseReport(MUser user,List<MCourse> source)
         {
@@ -25,15 +25,15 @@ namespace eCourses.WinUI.Forms.Courses
             InitializeComponent();
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            PanelHelper.SwapPanels(this.Parent, this, new CourseList(_user,_course));
-        }
-
         private void CourseReport_Load(object sender, EventArgs e)
         {
             MCourseListVMBindingSource.DataSource = _source;
             this.reportViewer1.RefreshReport();
+        }
+
+        private void btnBack_Click_1(object sender, EventArgs e)
+        {
+            PanelHelper.SwapPanels(this.Parent, this, new ReportsPage());
         }
     }
 }

@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -223,11 +223,23 @@
     <Compile Include="Forms\Courses\CourseSalesBetweenDatesReport.Designer.cs">
       <DependentUpon>CourseSalesBetweenDatesReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Courses\CourseTop3BestRatingReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Courses\CourseTop3BestRatingReport.Designer.cs">
+      <DependentUpon>CourseTop3BestRatingReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Courses\CourseTop3ListReport.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\Courses\CourseTop3ListReport.Designer.cs">
       <DependentUpon>CourseTop3ListReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reports\ReportsPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\ReportsPage.Designer.cs">
+      <DependentUpon>ReportsPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Subcategories\CategoryAddForSubcategory.cs">
       <SubType>UserControl</SubType>
@@ -338,58 +350,76 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reports\DataForCourseTop3Report.Context.cs">
+    <Compile Include="Reports\DataForReports\DataForCourseTop3Report.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataForCourseTop3Report.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Reports\DataForCourseTop3Report.cs">
+    <Compile Include="Reports\DataForReports\DataForCourseTop3Report.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataForCourseTop3Report.tt</DependentUpon>
     </Compile>
-    <Compile Include="Reports\DataForCourseTop3Report.Designer.cs">
+    <Compile Include="Reports\DataForReports\DataForCourseTop3Report.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataForCourseTop3Report.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Reports\DataForReport.Context.cs">
+    <Compile Include="Reports\DataForReports\DataForReport.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataForReport.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Reports\DataForReport.cs">
+    <Compile Include="Reports\DataForReports\DataForReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataForReport.tt</DependentUpon>
     </Compile>
-    <Compile Include="Reports\DataForReport.Designer.cs">
+    <Compile Include="Reports\DataForReports\DataForReport.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataForReport.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Reports\DataForTop3UsersReport.Context.cs">
+    <Compile Include="Reports\DataForReports\DataForTop3UsersReport.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataForTop3UsersReport.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Reports\DataForTop3UsersReport.cs">
+    <Compile Include="Reports\DataForReports\DataForTop3UsersReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataForTop3UsersReport.tt</DependentUpon>
     </Compile>
-    <Compile Include="Reports\DataForTop3UsersReport.Designer.cs">
+    <Compile Include="Reports\DataForReports\DataForTop3UsersReport.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataForTop3UsersReport.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Reports\GetCoursesBySubcategory_Result.cs">
+    <Compile Include="Reports\DataForReports\GetCoursesBySubcategory_Result.cs">
       <DependentUpon>DataForReport.tt</DependentUpon>
     </Compile>
-    <Compile Include="Reports\GetTop3Courses_Result.cs">
+    <Compile Include="Reports\DataForReports\GetTop3Courses_Result.cs">
       <DependentUpon>DataForCourseTop3Report.tt</DependentUpon>
     </Compile>
-    <Compile Include="Reports\Top3UsersWithMostCoursePurchases_Result.cs">
+    <Compile Include="Reports\DataForReports\Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DataForReports\Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DataForReports\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DataForReports\Top3BestAverageRatingCourses_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DataForReports\Top3UsersWithMostCoursePurchases_Result.cs">
       <DependentUpon>DataForTop3UsersReport.tt</DependentUpon>
     </Compile>
     <Compile Include="_150031DataSet.Designer.cs">
@@ -439,8 +469,14 @@
     <EmbeddedResource Include="Forms\Courses\CourseSalesBetweenDatesReport.resx">
       <DependentUpon>CourseSalesBetweenDatesReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Courses\CourseTop3BestRatingReport.resx">
+      <DependentUpon>CourseTop3BestRatingReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Courses\CourseTop3ListReport.resx">
       <DependentUpon>CourseTop3ListReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\ReportsPage.resx">
+      <DependentUpon>ReportsPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Subcategories\CategoryAddForSubcategory.resx">
       <DependentUpon>CategoryAddForSubcategory.cs</DependentUpon>
@@ -507,6 +543,7 @@
     <EmbeddedResource Include="Reports\CoursesPerCategoryReport.rdlc" />
     <EmbeddedResource Include="Reports\CourseSalesReport.rdlc" />
     <EmbeddedResource Include="Reports\CoursesTop3Report.rdlc" />
+    <EmbeddedResource Include="Reports\Top3BestRatingCourses.rdlc" />
     <EmbeddedResource Include="Reports\Top3UsersWithMostCoursePurchases.rdlc" />
     <EmbeddedResource Include="Reports\UserReport.rdlc" />
     <None Include="eCoursesDataSet.xsc">
@@ -527,6 +564,7 @@
     <None Include="Properties\DataSources\eCourses.Model.ViewModels.CourseListVM.datasource" />
     <None Include="Properties\DataSources\eCourses.Model.ViewModels.CourseSalesVM.datasource" />
     <None Include="Properties\DataSources\eCourses.Model.ViewModels.UserListVM.datasource" />
+    <None Include="Properties\DataSources\eCourses.WinUI.Reports.DataForReports.Top3BestAverageRatingCourses_Result.datasource" />
     <None Include="Properties\DataSources\eCourses.WinUI.Reports.GetCoursesBySubcategory_Result.datasource" />
     <None Include="Properties\DataSources\eCourses.WinUI.Reports.GetTop3Courses_Result.datasource" />
     <None Include="Properties\DataSources\eCourses.WinUI.Reports.Top3UsersWithMostCoursePurchases_Result.datasource" />
@@ -539,26 +577,33 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="Reports\DataForReport.edmx">
+    <EntityDeploy Include="Reports\DataForReports\DataForReport.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DataForReport.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <EntityDeploy Include="Reports\DataForCourseTop3Report.edmx">
+    <EntityDeploy Include="Reports\DataForReports\DataForCourseTop3Report.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DataForCourseTop3Report.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Reports\DataForCourseTop3Report.edmx.diagram">
+    <None Include="Reports\DataForReports\DataForCourseTop3Report.edmx.diagram">
       <DependentUpon>DataForCourseTop3Report.edmx</DependentUpon>
     </None>
-    <None Include="Reports\DataForReport.edmx.diagram">
+    <None Include="Reports\DataForReports\DataForReport.edmx.diagram">
       <DependentUpon>DataForReport.edmx</DependentUpon>
     </None>
-    <EntityDeploy Include="Reports\DataForTop3UsersReport.edmx">
+    <EntityDeploy Include="Reports\DataForReports\DataForTop3UsersReport.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DataForTop3UsersReport.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Reports\DataForTop3UsersReport.edmx.diagram">
+    <None Include="Reports\DataForReports\DataForTop3UsersReport.edmx.diagram">
       <DependentUpon>DataForTop3UsersReport.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="Reports\DataForReports\Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Reports\DataForReports\Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
     </None>
     <None Include="_150031DataSet.xsc">
       <DependentUpon>_150031DataSet.xsd</DependentUpon>
@@ -601,35 +646,45 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Reports\DataForCourseTop3Report.Context.tt">
+    <Content Include="Reports\DataForReports\DataForCourseTop3Report.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DataForCourseTop3Report.edmx</DependentUpon>
       <LastGenOutput>DataForCourseTop3Report.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Reports\DataForCourseTop3Report.tt">
+    <Content Include="Reports\DataForReports\DataForCourseTop3Report.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DataForCourseTop3Report.edmx</DependentUpon>
       <LastGenOutput>DataForCourseTop3Report.cs</LastGenOutput>
     </Content>
-    <Content Include="Reports\DataForReport.Context.tt">
+    <Content Include="Reports\DataForReports\DataForReport.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DataForReport.Context.cs</LastGenOutput>
       <DependentUpon>DataForReport.edmx</DependentUpon>
     </Content>
-    <Content Include="Reports\DataForReport.tt">
+    <Content Include="Reports\DataForReports\DataForReport.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DataForReport.edmx</DependentUpon>
       <LastGenOutput>DataForReport.cs</LastGenOutput>
     </Content>
-    <Content Include="Reports\DataForTop3UsersReport.Context.tt">
+    <Content Include="Reports\DataForReports\DataForTop3UsersReport.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DataForTop3UsersReport.edmx</DependentUpon>
       <LastGenOutput>DataForTop3UsersReport.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Reports\DataForTop3UsersReport.tt">
+    <Content Include="Reports\DataForReports\DataForTop3UsersReport.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DataForTop3UsersReport.edmx</DependentUpon>
       <LastGenOutput>DataForTop3UsersReport.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\DataForReports\Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\DataForReports\Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

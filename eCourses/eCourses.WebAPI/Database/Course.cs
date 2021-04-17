@@ -20,8 +20,7 @@ namespace eCourses.WebAPI.Database
         public virtual Subcategory Subcategory { get; set; }
         public string Language { get; set; }
         public DateTime DateCreated { get; set; }
-        [Column(TypeName = "decimal(8,2)")]
-        public decimal Price { get; set; }
+        public float Price { get; set; }
         public string Description { get; set; }
         public byte[] Image { get; set; }
         public string URL { get; set; }

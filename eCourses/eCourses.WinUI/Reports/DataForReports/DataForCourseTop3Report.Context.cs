@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace eCourses.WinUI.Reports
+namespace eCourses.WinUI.Reports.DataForReports
 {
     using System;
     using System.Data.Entity;
@@ -15,10 +15,10 @@ namespace eCourses.WinUI.Reports
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class CoursesPerSubcategory : DbContext
+    public partial class Entities : DbContext
     {
-        public CoursesPerSubcategory()
-            : base("name=CoursesPerSubcategory")
+        public Entities()
+            : base("name=Entities")
         {
         }
     
@@ -28,13 +28,9 @@ namespace eCourses.WinUI.Reports
         }
     
     
-        public virtual ObjectResult<GetCoursesBySubcategory_Result> GetCoursesBySubcategory(Nullable<int> subcategoryID)
+        public virtual ObjectResult<GetTop3Courses_Result> GetTop3Courses()
         {
-            var subcategoryIDParameter = subcategoryID.HasValue ?
-                new ObjectParameter("SubcategoryID", subcategoryID) :
-                new ObjectParameter("SubcategoryID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetCoursesBySubcategory_Result>("GetCoursesBySubcategory", subcategoryIDParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetTop3Courses_Result>("GetTop3Courses");
         }
     }
 }

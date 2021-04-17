@@ -1,4 +1,5 @@
 ﻿using eCourses.Model;
+using eCourses.WinUI.Forms.Reports;
 using eCourses.WinUI.Helper;
 using Microsoft.Reporting.WinForms;
 using System;
@@ -33,6 +34,11 @@ namespace eCourses.WinUI.Forms.Users
         private void btnBack_Click(object sender, EventArgs e)
         {
             PanelHelper.SwapPanels(this.Parent, this, new UserList());
+        }
+
+        private void btnBack_Click_1(object sender, EventArgs e)
+        {
+            PanelHelper.SwapPanels(this.Parent, this, new ReportsPage());
         }
     }
 }

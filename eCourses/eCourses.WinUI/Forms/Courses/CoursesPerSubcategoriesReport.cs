@@ -12,6 +12,8 @@ using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 using eCourses.WinUI.Helper;
 using eCourses.WinUI.Main;
+using eCourses.WinUI.Reports.DataForReports;
+using eCourses.WinUI.Forms.Reports;
 
 namespace eCourses.WinUI.Forms.Courses
 {
@@ -51,9 +53,9 @@ namespace eCourses.WinUI.Forms.Courses
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-            PanelHelper.SwapPanels(this.Parent, this, new Welcome());
+            PanelHelper.SwapPanels(this.Parent, this, new ReportsPage());
         }
     }
 }

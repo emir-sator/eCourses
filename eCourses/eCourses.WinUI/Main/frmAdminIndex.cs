@@ -14,6 +14,7 @@ using eCourses.WinUI.Forms.Categories;
 using eCourses.WinUI.Forms.Subcategories;
 using eCourses.WinUI.Forms.Courses;
 using eCourses.WinUI.Forms.Transactions;
+using eCourses.WinUI.Forms.Reports;
 
 namespace eCourses.WinUI.Main
 {
@@ -98,6 +99,11 @@ namespace eCourses.WinUI.Main
         private void btnTransactions_Click(object sender, EventArgs e)
         {
             PanelHelper.AddPanel(ContentPanel, new TransactionList());
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            PanelHelper.AddPanel(ContentPanel, new ReportsPage());
         }
     }
 }

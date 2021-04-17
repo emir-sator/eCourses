@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using eCourses.WinUI.Reports;
+using eCourses.WinUI.Reports.DataForReports;
+using eCourses.WinUI.Forms.Reports;
 
 namespace eCourses.WinUI.Forms.Users
 {
@@ -33,6 +35,11 @@ namespace eCourses.WinUI.Forms.Users
                 Top3UsersWithMostCoursePurchases_ResultBindingSource.DataSource = db.Top3UsersWithMostCoursePurchases().ToList();
                 reportViewer1.RefreshReport();
             };
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            PanelHelper.SwapPanels(this.Parent, this, new ReportsPage());
         }
     }
 }

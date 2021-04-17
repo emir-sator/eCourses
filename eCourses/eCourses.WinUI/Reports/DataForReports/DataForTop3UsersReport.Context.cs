@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace eCourses.WinUI.Reports
+namespace eCourses.WinUI.Reports.DataForReports
 {
     using System;
     using System.Data.Entity;

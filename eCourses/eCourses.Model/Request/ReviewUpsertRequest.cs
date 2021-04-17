@@ -14,6 +14,6 @@ namespace eCourses.Model.Request
         [Required]
         public int CourseID { get; set; }
         [Required]
-        public decimal Rating { get; set; }
+        public float Rating { get; set; }
     }
 }

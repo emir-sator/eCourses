@@ -30,55 +30,56 @@ namespace eCourses.WinUI.Forms.Courses
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.button1 = new System.Windows.Forms.Button();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.GetTop3Courses_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.Top3UsersWithMostCoursePurchases_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GetTop3Courses_ResultBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Top3UsersWithMostCoursePurchases_ResultBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // GetTop3Courses_ResultBindingSource
+            // 
+            this.GetTop3Courses_ResultBindingSource.DataSource = typeof(eCourses.WinUI.Reports.DataForReports.GetTop3Courses_Result);
+            // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.GetTop3Courses_ResultBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "DataSet1";
+            reportDataSource2.Value = this.GetTop3Courses_ResultBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "eCourses.WinUI.Reports.CoursesTop3Report.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(26, 46);
+            this.reportViewer1.Location = new System.Drawing.Point(33, 46);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(685, 365);
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(598, 417);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Back to homepage";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // GetTop3Courses_ResultBindingSource
-            // 
-            this.GetTop3Courses_ResultBindingSource.DataSource = typeof(eCourses.WinUI.Reports.GetTop3Courses_Result);
-            // 
             // Top3UsersWithMostCoursePurchases_ResultBindingSource
             // 
-            this.Top3UsersWithMostCoursePurchases_ResultBindingSource.DataSource = typeof(eCourses.WinUI.Reports.Top3UsersWithMostCoursePurchases_Result);
+            this.Top3UsersWithMostCoursePurchases_ResultBindingSource.DataSource = typeof(eCourses.WinUI.Reports.DataForReports.Top3UsersWithMostCoursePurchases_Result);
             // 
-            // CourseTop3ListRepost
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(645, 417);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(73, 33);
+            this.btnBack.TabIndex = 99;
+            this.btnBack.Text = "Back ";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // CourseTop3ListReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "CourseTop3ListRepost";
+            this.Name = "CourseTop3ListReport";
             this.Size = new System.Drawing.Size(739, 476);
             ((System.ComponentModel.ISupportInitialize)(this.GetTop3Courses_ResultBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Top3UsersWithMostCoursePurchases_ResultBindingSource)).EndInit();
@@ -90,7 +91,7 @@ namespace eCourses.WinUI.Forms.Courses
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource GetTop3Courses_ResultBindingSource;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource Top3UsersWithMostCoursePurchases_ResultBindingSource;
+        private System.Windows.Forms.Button btnBack;
     }
 }

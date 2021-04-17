@@ -1,6 +1,8 @@
-﻿using eCourses.WinUI.Helper;
+﻿using eCourses.WinUI.Forms.Reports;
+using eCourses.WinUI.Helper;
 using eCourses.WinUI.Main;
 using eCourses.WinUI.Reports;
+using eCourses.WinUI.Reports.DataForReports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,9 +32,9 @@ namespace eCourses.WinUI.Forms.Courses
             };
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-            PanelHelper.SwapPanels(this.Parent, this, new Welcome());
+            PanelHelper.SwapPanels(this.Parent, this, new ReportsPage());
         }
     }
 }

@@ -30,38 +30,39 @@ namespace eCourses.WinUI.Forms.Courses
         private void InitializeComponent()
         {
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "eCourses.WinUI.Reports.CourseSalesReport.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(16, 56);
+            this.reportViewer1.Location = new System.Drawing.Point(16, 42);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(697, 383);
             this.reportViewer1.TabIndex = 0;
             // 
-            // button1
+            // btnBack
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(600, 445);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Back to homepage";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(640, 431);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(73, 33);
+            this.btnBack.TabIndex = 99;
+            this.btnBack.Text = "Back ";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // CourseSalesBetweenDatesReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.reportViewer1);
             this.Name = "CourseSalesBetweenDatesReport";
-            this.Size = new System.Drawing.Size(728, 485);
+            this.Size = new System.Drawing.Size(728, 499);
             this.Load += new System.EventHandler(this.Sales_Load);
             this.ResumeLayout(false);
 
@@ -70,6 +71,6 @@ namespace eCourses.WinUI.Forms.Courses
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBack;
     }
 }

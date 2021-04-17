@@ -30,11 +30,11 @@ namespace eCourses.WinUI.Forms.Courses
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.MCourseListVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MCourseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnBack = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MCourseListVMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MCourseBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -47,6 +47,18 @@ namespace eCourses.WinUI.Forms.Courses
             // 
             this.MCourseBindingSource.DataSource = typeof(eCourses.Model.MCourse);
             // 
+            // reportViewer1
+            // 
+            reportDataSource2.Name = "dsCourses";
+            reportDataSource2.Value = this.MCourseListVMBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "eCourses.WinUI.Reports.CourseReport.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(49, 41);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(642, 354);
+            this.reportViewer1.TabIndex = 60;
+            // 
             // btnBack
             // 
             this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -55,30 +67,17 @@ namespace eCourses.WinUI.Forms.Courses
             this.btnBack.Location = new System.Drawing.Point(618, 401);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(73, 33);
-            this.btnBack.TabIndex = 59;
-            this.btnBack.Text = "Back to list";
+            this.btnBack.TabIndex = 99;
+            this.btnBack.Text = "Back ";
             this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // reportViewer1
-            // 
-            reportDataSource1.Name = "dsCourses";
-            reportDataSource1.Value = this.MCourseListVMBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "eCourses.WinUI.Reports.CourseReport.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(49, 41);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(642, 354);
-            this.reportViewer1.TabIndex = 60;
-            
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click_1);
             // 
             // CourseReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.reportViewer1);
             this.Name = "CourseReport";
             this.Size = new System.Drawing.Size(746, 487);
             this.Load += new System.EventHandler(this.CourseReport_Load);
@@ -89,10 +88,9 @@ namespace eCourses.WinUI.Forms.Courses
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnBack;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource MCourseBindingSource;
         private System.Windows.Forms.BindingSource MCourseListVMBindingSource;
+        private System.Windows.Forms.Button btnBack;
     }
 }

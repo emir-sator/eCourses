@@ -47,10 +47,6 @@ namespace eCourses.WinUI.Forms.Courses
             this.cbSubcategories = new System.Windows.Forms.ComboBox();
             this.courseListVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
-            this.btnCourseReport = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourses)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseListVMBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -217,65 +213,14 @@ namespace eCourses.WinUI.Forms.Courses
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnCourseReport
-            // 
-            this.btnCourseReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnCourseReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCourseReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCourseReport.Location = new System.Drawing.Point(507, 401);
-            this.btnCourseReport.Name = "btnCourseReport";
-            this.btnCourseReport.Size = new System.Drawing.Size(168, 29);
-            this.btnCourseReport.TabIndex = 42;
-            this.btnCourseReport.Text = "Top 3 most purchased courses";
-            this.btnCourseReport.UseVisualStyleBackColor = false;
-            this.btnCourseReport.Click += new System.EventHandler(this.btnCourseReport_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(419, 404);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 20);
-            this.label2.TabIndex = 47;
-            this.label2.Text = "Reports:";
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(507, 436);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(168, 30);
-            this.button2.TabIndex = 48;
-            this.button2.Text = "Course sales between dates";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(507, 472);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(168, 28);
-            this.button3.TabIndex = 49;
-            this.button3.Text = "Courses per subcategory";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // CourseList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvCourses);
             this.Controls.Add(this.cbSubcategories);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnCourseReport);
             this.Controls.Add(this.btnAddCourse);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnDeleteCourse);
@@ -303,10 +248,6 @@ namespace eCourses.WinUI.Forms.Courses
         private System.Windows.Forms.ComboBox cbSubcategories;
         private System.Windows.Forms.BindingSource courseListVMBindingSource;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnCourseReport;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridViewTextBoxColumn CourseID;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Language;

@@ -160,7 +160,7 @@ namespace eCourses.WinUI.Forms.Courses
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(73, 27);
             this.btnBack.TabIndex = 60;
-            this.btnBack.Text = "Back to list";
+            this.btnBack.Text = "Back ";
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 

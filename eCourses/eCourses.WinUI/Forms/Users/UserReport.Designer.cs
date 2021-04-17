@@ -30,7 +30,7 @@ namespace eCourses.WinUI.Forms.Users
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.UserListVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rptUsers = new Microsoft.Reporting.WinForms.ReportViewer();
             this.MUserBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -45,9 +45,9 @@ namespace eCourses.WinUI.Forms.Users
             // 
             // rptUsers
             // 
-            reportDataSource1.Name = "dsUsers";
-            reportDataSource1.Value = this.UserListVMBindingSource;
-            this.rptUsers.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "dsUsers";
+            reportDataSource2.Value = this.UserListVMBindingSource;
+            this.rptUsers.LocalReport.DataSources.Add(reportDataSource2);
             this.rptUsers.LocalReport.ReportEmbeddedResource = "eCourses.WinUI.Reports.UserReport.rdlc";
             this.rptUsers.Location = new System.Drawing.Point(42, 39);
             this.rptUsers.Name = "rptUsers";
@@ -67,10 +67,10 @@ namespace eCourses.WinUI.Forms.Users
             this.btnBack.Location = new System.Drawing.Point(615, 410);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(73, 33);
-            this.btnBack.TabIndex = 58;
-            this.btnBack.Text = "Back to list";
+            this.btnBack.TabIndex = 99;
+            this.btnBack.Text = "Back ";
             this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click_1);
             // 
             // UserReport
             // 

@@ -7,15 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace eCourses.WinUI.Reports
+namespace eCourses.WinUI.Reports.DataForReports
 {
     using System;
     
-    public partial class GetTop3Courses_Result
+    public partial class GetCoursesBySubcategory_Result
     {
         public string Name { get; set; }
         public string Language { get; set; }
+        public System.DateTime DateCreated { get; set; }
         public float Price { get; set; }
-        public Nullable<int> Number_of_purchasing { get; set; }
     }
 }

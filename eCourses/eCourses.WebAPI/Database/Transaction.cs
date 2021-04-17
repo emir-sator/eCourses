@@ -16,8 +16,7 @@ namespace eCourses.WebAPI.Database
         public int CourseID { get; set; }
         public Course Course { get; set; }
         public DateTime TransactionDate { get; set; }
-        [Column(TypeName = "decimal(8,2)")]
-        public decimal Price { get; set; }
+        public float Price { get; set; }
         public string CourseName { get; set; }
         public string UserFullName { get; set; }
 

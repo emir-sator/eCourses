@@ -30,7 +30,6 @@ namespace eCourses.WinUI.Forms.Users
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserList));
-            this.btnUserReport = new System.Windows.Forms.Button();
             this.btnAddUser = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -44,23 +43,9 @@ namespace eCourses.WinUI.Forms.Users
             this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnUserReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnUserReport
-            // 
-            this.btnUserReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnUserReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUserReport.Location = new System.Drawing.Point(465, 382);
-            this.btnUserReport.Name = "btnUserReport";
-            this.btnUserReport.Size = new System.Drawing.Size(212, 23);
-            this.btnUserReport.TabIndex = 18;
-            this.btnUserReport.Text = "List of all Users";
-            this.btnUserReport.UseVisualStyleBackColor = false;
-            this.btnUserReport.Click += new System.EventHandler(this.btnUserReport_Click);
             // 
             // btnAddUser
             // 
@@ -128,7 +113,7 @@ namespace eCourses.WinUI.Forms.Users
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.ReadOnly = true;
             this.dgvUsers.RowTemplate.Height = 30;
-            this.dgvUsers.Size = new System.Drawing.Size(605, 276);
+            this.dgvUsers.Size = new System.Drawing.Size(605, 326);
             this.dgvUsers.TabIndex = 13;
             // 
             // UserID
@@ -197,38 +182,26 @@ namespace eCourses.WinUI.Forms.Users
             this.label1.TabIndex = 35;
             this.label1.Text = "Users";
             // 
-            // button1
+            // btnUserReport
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(465, 411);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(212, 25);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "Top 3 Users with most course purchases";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(378, 385);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 20);
-            this.label2.TabIndex = 37;
-            this.label2.Text = "Reports:";
+            this.btnUserReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnUserReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUserReport.Location = new System.Drawing.Point(579, 432);
+            this.btnUserReport.Name = "btnUserReport";
+            this.btnUserReport.Size = new System.Drawing.Size(98, 23);
+            this.btnUserReport.TabIndex = 38;
+            this.btnUserReport.Text = "List of all Users";
+            this.btnUserReport.UseVisualStyleBackColor = false;
+            this.btnUserReport.Click += new System.EventHandler(this.btnUserReport_Click_1);
             // 
             // UserList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnUserReport);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnDelete);
@@ -245,8 +218,6 @@ namespace eCourses.WinUI.Forms.Users
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnUserReport;
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnDelete;
@@ -260,7 +231,6 @@ namespace eCourses.WinUI.Forms.Users
         private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnUserReport;
     }
 }

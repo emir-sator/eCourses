@@ -32,25 +32,6 @@ namespace eCourses.WinUI.Forms.Courses
 
         private async void CourseList_Load(object sender, EventArgs e)
         {
-            var user = await userService.GetById<MUser>(_user.UserID);
-
-            foreach (var userRole in user.UserRoles)
-            {
-                if ( userRole.RoleID == 1)
-                {
-                    btnCourseReport.Visible = true;
-                    label2.Visible = true;
-                    button2.Visible = true;
-                    button3.Visible = true;
-                }
-                if (userRole.RoleID == 2)
-                {
-                    btnCourseReport.Visible = false;
-                    label2.Visible = false;
-                    button2.Visible = false;
-                    button3.Visible = false;
-                }
-            }
 
             await LoadList();
         }
@@ -195,22 +176,6 @@ namespace eCourses.WinUI.Forms.Courses
             }
            
             
-        }
-
-        private void btnCourseReport_Click(object sender, EventArgs e)
-        {
-           
-            PanelHelper.SwapPanels(this.Parent, this, new CourseTop3ListReport());
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            PanelHelper.SwapPanels(this.Parent, this, new CourseSaleList(_user,_course));
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            PanelHelper.SwapPanels(this.Parent, this, new CoursesPerSubcategoriesReport());
         }
 
         private void btnEditCourse_Click(object sender, EventArgs e)
