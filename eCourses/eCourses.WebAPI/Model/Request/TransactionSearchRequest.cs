@@ -8,8 +8,9 @@ namespace eCourses.WebAPI.Model.Request
     public class TransactionSearchRequest
     {
         public int UserID { get; set; }
-        public DateTime From { get; set; }
-        public DateTime To { get; set; }
+        public int CourseID { get; set; }
+        public DateTime? From { get; set; }
+        public DateTime? To { get; set; }
         public string CourseName { get; set; }
     }
 }

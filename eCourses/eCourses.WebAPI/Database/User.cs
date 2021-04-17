@@ -20,6 +20,7 @@ namespace eCourses.WebAPI.Database
         public string GitHubURL { get; set; }
         public string LinkedinURL { get; set; }
         public byte[] Image { get; set; }
+        public string FullName { get; set; }
         public virtual ICollection<UserRoles> UserRoles { get; set; }
         public virtual ICollection<UserCourseReview> UserCourseReviews { get; set; }
     }

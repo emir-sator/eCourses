@@ -14,7 +14,7 @@ namespace eCourses.Model
         public DateTime DateOfBuying { get; set; }
         public string Username { get; set; }
         public string CourseName { get; set; }
-        public float Price { get; set; }
+        public decimal Price { get; set; }
         public MUser User { get; set; }
         public MCourse Course { get; set; }
     }

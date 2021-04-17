@@ -23,6 +23,7 @@ namespace eCourses.WebAPI.Request
         public string PasswordConfirmation { get; set; }
         public string GitHubURL { get; set; }
         public string LinkedinURL { get; set; }
+        public string FullName { get; set; }
         public byte[] Image { get; set; }
         public List<int> Roles { get; set; } = new List<int>();
         public List<int> RolesToDelete { get; set; } = new List<int>();

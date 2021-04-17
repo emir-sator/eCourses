@@ -11,6 +11,8 @@ namespace eCourses.Model.Request
         public int UserID { get; set; }
         public int CourseID { get; set; }
         public DateTime TransactionDate { get; set; }
-        public float Price { get; set; }
+        public decimal Price { get; set; }
+        public string CourseName { get; set; }
+        public string UserFullName { get; set; }
     }
 }

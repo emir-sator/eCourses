@@ -31,8 +31,7 @@ namespace eCourses.WebAPI.Database
             
             modelBuilder.Entity<UserLikedCourse>()
                 .HasKey(k => new { k.UserID, k.CourseID });
-            modelBuilder.Entity<Transaction>().
-                HasKey(t => new { t.TransactionID, t.CourseID, t.UserID });
+           
            
 
             OnModelCreatingPartial(modelBuilder);

@@ -28,6 +28,10 @@ namespace eCourses.WebAPI.Service
             {
                 query = (IOrderedQueryable<Transaction>)query.Where(i => i.UserID == request.UserID);
             }
+            if (request.CourseID != 0)
+            {
+                query = (IOrderedQueryable<Transaction>)query.Where(i => i.CourseID == request.CourseID);
+            }
             if (request.From != null)
             {
                 query = (IOrderedQueryable<Transaction>)query.Where(i => i.TransactionDate >= request.From);

@@ -236,7 +236,11 @@ namespace eCourses.Mobile.ViewModels.Course
                             CourseID = Course.CourseID,
                             UserID=user.UserID,
                             Price=Course.Price,
-                            TransactionDate=DateTime.Now
+                            TransactionDate=DateTime.Now,
+                            CourseName=Course.Name,
+                            UserFullName=user.FirstName+ " "+user.LastName
+                            
+                            
                         };
                         await transactionService.Insert<MTransaction>(TransReq);
                         await buyCourseService.Insert<MBuyCourse>(request);

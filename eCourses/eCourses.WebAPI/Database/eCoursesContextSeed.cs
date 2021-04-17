@@ -51,7 +51,8 @@ namespace eCourses.WebAPI.Database
                     Email = "admin@ecourses.com",
                     PhoneNumber = "061435234",
                     PasswordSalt = Salt[0],
-                    PasswordHash = GenerateHash(Salt[0], "Admin123.")
+                    PasswordHash = GenerateHash(Salt[0], "Admin123."),
+                    FullName="Admin Admin"
                 },
                 new User
                 {
@@ -62,7 +63,8 @@ namespace eCourses.WebAPI.Database
                     Email = "adminDeskop@ecourses.com",
                     PhoneNumber = "061525234",
                     PasswordSalt = Salt[1],
-                    PasswordHash = GenerateHash(Salt[1], "Admin123.")
+                    PasswordHash = GenerateHash(Salt[1], "Admin123."),
+                    FullName = "Admin Admin"
                 },
                 new User
                 {
@@ -73,7 +75,8 @@ namespace eCourses.WebAPI.Database
                     Email = "mobile@ecourses.com",
                     PhoneNumber = "061121777",
                     PasswordSalt = Salt[2],
-                    PasswordHash = GenerateHash(Salt[2], "Mobile123.")
+                    PasswordHash = GenerateHash(Salt[2], "Mobile123."),
+                    FullName = "Mobile Mobile"
                 },
                 new User
                 {
@@ -84,7 +87,8 @@ namespace eCourses.WebAPI.Database
                     Email = "instructor1@ecourses.com",
                     PhoneNumber = "242151222",
                     PasswordSalt = Salt[2],
-                    PasswordHash = GenerateHash(Salt[2], "Instructor1.")
+                    PasswordHash = GenerateHash(Salt[2], "Instructor1."),
+                    FullName = "InstructorIme InstructorPrezime"
                 },
                 new User
                 {
@@ -95,7 +99,8 @@ namespace eCourses.WebAPI.Database
                     Email = "instructor2@ecourses.com",
                     PhoneNumber = "242151222",
                     PasswordSalt = Salt[2],
-                    PasswordHash = GenerateHash(Salt[2], "Instructor2.")
+                    PasswordHash = GenerateHash(Salt[2], "Instructor2."),
+                    FullName = "Instructor2Ime Instructor2Prezime"
                 },
                 new User
                 {
@@ -106,7 +111,8 @@ namespace eCourses.WebAPI.Database
                     Email = "instructor1@ecourses.com",
                     PhoneNumber = "242151222",
                     PasswordSalt = Salt[2],
-                    PasswordHash = GenerateHash(Salt[2], "Instructor3.")
+                    PasswordHash = GenerateHash(Salt[2], "Instructor3."),
+                    FullName = "Instructor3Ime Instructor3Prezime"
                 },
                 new User
                 {
@@ -117,7 +123,8 @@ namespace eCourses.WebAPI.Database
                     Email = "polaznik1@ecourses.com",
                     PhoneNumber = "252612661",
                     PasswordSalt = Salt[2],
-                    PasswordHash = GenerateHash(Salt[2], "Polaznik1.")
+                    PasswordHash = GenerateHash(Salt[2], "Polaznik1."),
+                    FullName = "Polaznik1Ime Polaznik1Prezime"
                 },
                 new User
                 {
@@ -128,7 +135,8 @@ namespace eCourses.WebAPI.Database
                     Email = "polaznik2@ecourses.com",
                     PhoneNumber = "252612661",
                     PasswordSalt = Salt[2],
-                    PasswordHash = GenerateHash(Salt[2], "Polaznik2.")
+                    PasswordHash = GenerateHash(Salt[2], "Polaznik2."),
+                    FullName = "Polaznik2Ime Polaznik2Prezime"
                 },
                  new User
                  {
@@ -139,7 +147,8 @@ namespace eCourses.WebAPI.Database
                      Email = "polaznik3@ecourses.com",
                      PhoneNumber = "252612661",
                      PasswordSalt = Salt[2],
-                     PasswordHash = GenerateHash(Salt[2], "Polaznik3.")
+                     PasswordHash = GenerateHash(Salt[2], "Polaznik3."),
+                     FullName = "Polaznik3Ime Polaznik3Prezime"
                  }
             );
             modelBuilder.Entity<Role>().HasData
@@ -296,7 +305,7 @@ namespace eCourses.WebAPI.Database
                             Name = "Getting started with Unreal Engine",
                             SubcategoryID = 4,
                             Language = "English",
-                            Price = 13.99f,
+                            Price = 13.99M,
                             DateCreated = DateTime.Now,
                             Image = File.ReadAllBytes("Files/test.jpg"),
                             Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
@@ -322,7 +331,7 @@ namespace eCourses.WebAPI.Database
                               Name = "testni1",
                               SubcategoryID = 6,
                               Language = "English",
-                              Price = 65.99f,
+                              Price = 65.99M,
                               DateCreated = DateTime.Now,
                               Image = File.ReadAllBytes("Files/test.jpg"),
                               Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",

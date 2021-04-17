@@ -110,7 +110,7 @@
                         <FormattedString.Spans>
                             <Span Text="Price: " FontSize="14" FontAttributes="Bold"></Span>
                             <Span Text=" "></Span>
-                            <Span Text="{Binding Course.Price, StringFormat='${0:F0}'}" FontSize="16"/>
+                            <Span Text="{Binding Course.Price, StringFormat='${0:F2}'}" FontSize="16"/>
                         </FormattedString.Spans>
                     </FormattedString>
                 </Label.FormattedText>

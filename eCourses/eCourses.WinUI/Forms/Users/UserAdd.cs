@@ -63,7 +63,8 @@ namespace eCourses.WinUI.Forms.Users
                         Password = txtPassword.Text,
                         PasswordConfirmation = txtPasswordConfirm.Text,
                         Image = pbUserImage.Image != null ? ImageHelper.SystemDrawingToByteArray(pbUserImage.Image) : null,
-                        Roles = roleList
+                        Roles = roleList,
+                        FullName=txtFirstName.Text+ " "+ txtLastName.Text
                     };
 
                     await userService.Insert<MUser>(request);

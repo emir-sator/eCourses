@@ -16,6 +16,7 @@ namespace eCourses.Model
         public string CourseName { get; set; }
         public DateTime TransactionDate { get; set; }
         public string TransactionDateString { get; set; }
-        public float Price { get; set; }
+        public decimal Price { get; set; }
+        public string UserFullName { get; set; }
     }
 }

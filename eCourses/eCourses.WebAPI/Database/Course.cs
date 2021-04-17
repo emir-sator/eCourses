@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eCourses.WebAPI.Database
 {
@@ -19,7 +20,8 @@ namespace eCourses.WebAPI.Database
         public virtual Subcategory Subcategory { get; set; }
         public string Language { get; set; }
         public DateTime DateCreated { get; set; }
-        public float Price { get; set; }
+        [Column(TypeName = "decimal(8,2)")]
+        public decimal Price { get; set; }
         public string Description { get; set; }
         public byte[] Image { get; set; }
         public string URL { get; set; }

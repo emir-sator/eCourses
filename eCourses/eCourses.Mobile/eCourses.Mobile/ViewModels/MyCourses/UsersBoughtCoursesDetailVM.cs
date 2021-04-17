@@ -29,8 +29,8 @@ namespace eCourses.Mobile.ViewModels.MyCourses
             set { SetProperty(ref _course,value); }
         }
 
-        private int rating;
-        public int Rating
+        private decimal rating;
+        public decimal Rating
         {
             get { return rating; }
             set { SetProperty(ref rating, value); }

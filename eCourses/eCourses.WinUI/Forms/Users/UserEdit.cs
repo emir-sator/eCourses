@@ -37,6 +37,7 @@ namespace eCourses.WinUI.Forms.Users
             txtEmail.Text = user.Email;
             txtPhone.Text = user.PhoneNumber;
 
+
             if (user.Image.Length > 3)
             {
                 pbUserPicture.Image = ImageHelper.ByteArrayToSystemDrawing(user.Image);
@@ -97,7 +98,8 @@ namespace eCourses.WinUI.Forms.Users
                     PhoneNumber = txtPhone.Text,
                     Image = pbUserPicture.Image != null ? ImageHelper.SystemDrawingToByteArray(pbUserPicture.Image) : null,
                     Roles = roleList,
-                    RolesToDelete = uncheckedRoles
+                    RolesToDelete = uncheckedRoles,
+                    FullName= txtFirstName.Text+ " "+ txtLastName.Text
                 };
 
                 await userService.Update<MUser>(_ID, request);

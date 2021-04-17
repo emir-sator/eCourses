@@ -95,13 +95,7 @@
                                             </Label.FormattedText>
                                         </Label>
                                     </StackLayout>
-                                    <ImageButton Grid.Row="0" Grid.Column="2"
-                                                Source="{Binding IsLikedImage}"
-                                                HorizontalOptions="End"
-                                                WidthRequest="30"
-                                                HeightRequest="30"
-                                                Command="{Binding LikeCommand}">
-                                    </ImageButton>
+                                    
                                 </Grid>
                             </StackLayout>
                         </ViewCell>

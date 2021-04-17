@@ -24,6 +24,7 @@ namespace eCourses.Model.Request
         public string GitHubURL { get; set; }
         public string LinkedinURL { get; set; }
         public byte[] Image { get; set; }
+        public string FullName { get; set; }
         public List<int> Roles { get; set; } = new List<int>();
         public List<int> RolesToDelete { get; set; } = new List<int>();
     }

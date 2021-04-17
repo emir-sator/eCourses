@@ -13,6 +13,7 @@ using eCourses.WinUI.Forms.Users;
 using eCourses.WinUI.Forms.Categories;
 using eCourses.WinUI.Forms.Subcategories;
 using eCourses.WinUI.Forms.Courses;
+using eCourses.WinUI.Forms.Transactions;
 
 namespace eCourses.WinUI.Main
 {
@@ -92,6 +93,11 @@ namespace eCourses.WinUI.Main
             var form = new frmLogin();
             form.Show();
             Hide();
+        }
+
+        private void btnTransactions_Click(object sender, EventArgs e)
+        {
+            PanelHelper.AddPanel(ContentPanel, new TransactionList());
         }
     }
 }

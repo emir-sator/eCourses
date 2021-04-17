@@ -17,6 +17,7 @@ namespace eCourses.Model
         public string GitHubURL { get; set; }
         public string LinkedinURL { get; set; }
         public byte[] Image { get; set; }
+        public string FullName { get; set; }
         public ICollection<MUserRole> UserRoles { get; set; }
     }
 }

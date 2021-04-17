@@ -14,6 +14,6 @@ namespace eCourses.WebAPI.Request
         public DateTime DateOfBuying { get; set; }
         public string Username { get; set; }
         public string CourseName { get; set; }
-        public float Price { get; set; }
+        public decimal Price { get; set; }
     }
 }

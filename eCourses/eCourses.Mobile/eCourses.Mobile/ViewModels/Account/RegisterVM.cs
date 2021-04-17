@@ -103,7 +103,8 @@ namespace eCourses.Mobile.ViewModels.Account
                     Username = Username,
                     Password = Password,
                     PasswordConfirmation = PasswordConfirmation,
-                    Roles = new List<int> { 2,3}
+                    Roles = new List<int> { 2,3},
+                    FullName= FirstName + " "+ LastName
                 };
                 if (request != null)
                 {
