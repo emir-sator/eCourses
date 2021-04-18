@@ -27,10 +27,10 @@ namespace eCourses.Mobile.ViewModels.Transactions
         }
 
 
-        DateTime _from = DateTime.Now;
+        DateTime? _from = DateTime.Now;
         public DateTime From
         {
-            get { return _from; }
+            get { return (DateTime)_from; }
             set
             {
                 SetProperty(ref _from, value);
@@ -39,10 +39,10 @@ namespace eCourses.Mobile.ViewModels.Transactions
             }
         }
 
-        DateTime _to = DateTime.Now;
+        DateTime? _to = DateTime.Now;
         public DateTime To
         {
-            get { return _to; }
+            get { return (DateTime)_to; }
             set
             {
                 SetProperty(ref _to, value);

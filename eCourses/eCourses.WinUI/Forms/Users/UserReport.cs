@@ -25,20 +25,13 @@ namespace eCourses.WinUI.Forms.Users
 
         private void UserReport_Load(object sender, EventArgs e)
         {
-            //ReportDataSource rds = new ReportDataSource("dsUsers", _source);
-            //this.rptUsers.LocalReport.DataSources.Add(rds);
             UserListVMBindingSource.DataSource = _source;
             this.rptUsers.RefreshReport();
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            PanelHelper.SwapPanels(this.Parent, this, new UserList());
-        }
-
         private void btnBack_Click_1(object sender, EventArgs e)
         {
-            PanelHelper.SwapPanels(this.Parent, this, new ReportsPage());
+            PanelHelper.SwapPanels(this.Parent, this, new UserList());
         }
     }
 }

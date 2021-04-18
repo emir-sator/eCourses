@@ -34,7 +34,7 @@
                      HorizontalOptions="Center"
                      VerticalOptions="Center"
                      BorderColor="Black">
-                    <Image Source="{Binding User.Image, Converter={StaticResource ImageConverter}}"
+                    <Image x:Name="ProfilePicture" Source="{Binding Image, Converter={StaticResource ImageConverter}}"
                      Aspect="AspectFill">
                     </Image>
                     <Frame.GestureRecognizers>
@@ -43,7 +43,7 @@
                         CommandParameter="Image1"/>
                     </Frame.GestureRecognizers>
                 </Frame>
-                <Button HorizontalOptions="FillAndExpand" Text="Save image" Command="{Binding SaveCommand}" Style="{StaticResource buttonStyle}"></Button>
+                
             </StackLayout>
                
                 
@@ -58,6 +58,10 @@
             <Entry x:Name="Phone"></Entry>
             <Label Text="Username"></Label>
             <Entry x:Name="Username"></Entry>
+            <Label Text="GitHub"></Label>
+            <Entry x:Name="GitHub"></Entry>
+            <Label Text="LinkedIn"></Label>
+            <Entry x:Name="LinkedIn"></Entry>
             <Button Clicked="Button_Clicked" HorizontalOptions="FillAndExpand" Text="Save changes" Style="{StaticResource buttonStyle}"></Button>
         </StackLayout>
     </ContentPage.Content>

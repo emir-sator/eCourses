@@ -30,6 +30,7 @@ namespace eCourses.Mobile.ViewModels.Course
         {
             BuyCommand = new Command(async () => await Buy());
             WatchCommand = new Command(async () => await Watch());
+            ShowDetailCommand = new Command(async () => await ShowDetail());
 
 
         }
@@ -80,6 +81,7 @@ namespace eCourses.Mobile.ViewModels.Course
             InitCommand = new Command(async () => await InitLectures());
             WatchCommand = new Command(async () => await Watch());
             BuyCommand = new Command(async () => await Buy());
+            ShowDetailCommand = new Command(async () => await ShowDetail());
 
         }
         private readonly INavigation Navigation;
@@ -87,9 +89,13 @@ namespace eCourses.Mobile.ViewModels.Course
         public ICommand InitCommand { get; set; }
         public ICommand BuyCommand { get; set; }
         public ICommand WatchCommand { get; set; }
+        public ICommand ShowDetailCommand { get; set; }
 
 
-
+        public async Task ShowDetail()
+        {
+            await Navigation.PushAsync(new InstructorDetailPage(Course.User));
+        }
         public async Task Buy()
         {
             await Navigation.PushAsync(new PaymentPage(Course));

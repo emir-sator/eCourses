@@ -39,6 +39,8 @@ namespace eCourses.Mobile.Views.Account
             Email.Text = SignedInUser.User.Email;
             Phone.Text = SignedInUser.User.PhoneNumber;
             Username.Text = SignedInUser.User.Username;
+            GitHub.Text = SignedInUser.User.GitHubURL;
+            LinkedIn.Text = SignedInUser.User.LinkedinURL;
             BindingContext = model = new EditProfileVM(SignedInUser.User);
             
             
@@ -84,7 +86,6 @@ namespace eCourses.Mobile.Views.Account
                     return;
                 }
                 
-                model.User.Image = await ImageHelper.UploadImage(model.Image);
                 var newUser = await userService.Update<MUser>(SignedInUser.User.UserID, new UserUpsertRequest
                 {
                     Username = Username.Text,
@@ -93,11 +94,11 @@ namespace eCourses.Mobile.Views.Account
                     Email = Email.Text,
                     PhoneNumber = Phone.Text,
                     Roles = new List<int> { 2, 3 },
-                    Image=model.User.Image
-                    
-                    
-                   
-                });;
+                    Image=model.Image,
+                    FullName=FirstName.Text+" "+LastName.Text,
+                    GitHubURL=GitHub.Text,
+                    LinkedinURL=LinkedIn.Text
+                });
 
                 if (newUser == default(MUser))
                     return;

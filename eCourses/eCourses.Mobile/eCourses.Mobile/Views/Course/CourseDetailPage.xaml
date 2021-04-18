@@ -7,7 +7,8 @@
              xmlns:converters="clr-namespace:eCourses.Mobile.Converters"
              mc:Ignorable="d"
              xmlns:system="clr-namespace:System;assembly=netstandard" 
-             xmlns:o="clr-namespace:Octane.Xamarin.Forms.VideoPlayer;assembly=Octane.Xamarin.Forms.VideoPlayer" xmlns:rating="clr-namespace:Syncfusion.SfRating.XForms;assembly=Syncfusion.SfRating.XForms"
+             xmlns:o="clr-namespace:Octane.Xamarin.Forms.VideoPlayer;assembly=Octane.Xamarin.Forms.VideoPlayer" 
+             xmlns:rating="clr-namespace:Syncfusion.SfRating.XForms;assembly=Syncfusion.SfRating.XForms"
              x:Class="eCourses.Mobile.Views.Course.CourseDetailPage">
 
     <ContentPage.BindingContext>
@@ -58,7 +59,7 @@
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-                <Button Text="View profile" HeightRequest="30" WidthRequest="100" Margin="0,0,20,0"
+                <Button  x:Name="btnInstructorDtl" Command="{Binding ShowDetailCommand}" Text="View profile" HeightRequest="30" WidthRequest="100" Margin="0,0,20,0"
                     BackgroundColor="Teal" TextColor="Black" FontAttributes="Bold" FontSize="10"></Button>
             </StackLayout>
             

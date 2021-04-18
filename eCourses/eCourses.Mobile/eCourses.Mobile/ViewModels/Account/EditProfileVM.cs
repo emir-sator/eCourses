@@ -11,7 +11,6 @@ namespace eCourses.Mobile.ViewModels.Account
 {
     public class EditProfileVM:BaseVM
     {
-        private readonly APIService userService = new APIService("User");
         MUser _user;
         public MUser User
         {
@@ -34,35 +33,13 @@ namespace eCourses.Mobile.ViewModels.Account
         }
         public EditProfileVM(MUser user)
         {
-            _user = user;
-
+            Image = user.Image;
             ChangeImage = new Command(async () => await OnTapped());
-            SaveCommand = new Command(async () => await SaveImage());
         }
         private async Task OnTapped()
         {
             Image = await ImageHelper.UploadImage(Image);
         }
-        private async Task SaveImage()
-        {
-
-            var user = await userService.GetById<MUser>(User.UserID);
-            try
-            {
-                var req = new UserUpsertRequest()
-                {
-                   
-                    Image = image,
-                };
-
-                await userService.Update<MUser>(user.UserID,req);
-
-            }
-            catch(Exception ex)
-            {
-
-            }
-        }
-
+        
     }
 }

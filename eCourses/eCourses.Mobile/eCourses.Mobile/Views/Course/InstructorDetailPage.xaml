@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:vm="clr-namespace:eCourses.Mobile.ViewModels.Course" 
+             xmlns:converters="clr-namespace:eCourses.Mobile.Converters"
+             x:Class="eCourses.Mobile.Views.Course.InstructorDetailPage">
+
+    <ContentPage.BindingContext>
+        <vm:InstructorDetailVM/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <converters:ImageConverter x:Key="ImageConverter"></converters:ImageConverter>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Margin="20,50,20,20">
+            
+                <Frame 
+                 Padding="0"
+                 WidthRequest="140"
+                 HeightRequest="240" 
+                 CornerRadius="100"
+                 IsClippedToBounds="True"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 BorderColor="Black">
+                    <Image Source="{Binding User.Image, Converter={StaticResource ImageConverter}}"
+                 Aspect="AspectFill">
+                    </Image>
+                </Frame>
+            
+            <Label HorizontalOptions="Center"
+                   FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="{Binding User.FirstName}" FontSize="16" TextColor="Black"/>
+                            <Span Text=" "></Span>
+                            <Span Text="{Binding User.LastName}" FontSize="16" TextColor="black"/>
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Button x:Name="btnOpenBrowserGitHub" Text="GitHub" Clicked="btnOpenBrowserGitHub_Clicked" WidthRequest="100" HorizontalOptions="Center" IsVisible="true"/>
+            <Button x:Name="btnOpenBrowserLinkedIn" Text="LinkedIn" Clicked="btnOpenBrowserLinkedIn_Clicked" WidthRequest="100" HorizontalOptions="Center" IsVisible="true"/>
+           
+
+
+            <Label  Margin="0,30,0,20">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="Courses by:" TextColor="Black" FontSize="16" FontAttributes="Bold"/>
+                            <Span Text=" "></Span>
+                            <Span Text="{Binding User.FirstName}"  TextColor="Black" FontSize="16" FontAttributes="Bold"/>
+                            <Span Text=" "></Span>
+                            <Span Text="{Binding User.LastName}"  TextColor="Black" FontSize="16" FontAttributes="Bold"/>
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+          
+            <ListView x:Name="CourseList" ItemsSource="{Binding InstructorList}" ItemSelected="Course_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" Orientation="Horizontal">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="300"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Grid.Row="0" Grid.Column="0">
+                                        <Frame 
+                                            Padding="0"
+                                            WidthRequest="100"
+                                            HeightRequest="100" 
+                                            CornerRadius="100"
+                                            IsClippedToBounds="True"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            BorderColor="Black">
+                                            <Image Source="{Binding Course.Image, Converter={StaticResource ImageConverter}}"
+                                                   Aspect="AspectFill">
+                                            </Image>
+                                        </Frame>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="1">
+                                        <Label Text="{Binding Course.Name}" 
+                                               LineBreakMode="NoWrap" 
+                                                FontAttributes="Bold"
+                                               Padding="10, 10, 0, 0"
+                                             
+                                               FontSize="16" />
+
+                                        <Label 
+                                                LineBreakMode="NoWrap" 
+                                                Padding="10, 10, 0, 0">
+
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <FormattedString.Spans>
+                                                        <Span Text="Instructor:" FontSize="12" TextColor="Black"/>
+                                                        <Span Text=" "></Span>
+                                                        <Span Text="{Binding Course.User.FirstName}" FontSize="12" TextColor="Black"/>
+                                                        <Span Text=" "></Span>
+                                                        <Span Text="{Binding Course.User.LastName}" FontSize="12" TextColor="Black"/>
+                                                    </FormattedString.Spans>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <Label Text="{Binding Course.Price, StringFormat='Price: ${0:F2}'}"
+                                               LineBreakMode="NoWrap"
+                                               Padding="10, 0, 0, 0"
+                                               FontSize="12" />
+                                    </StackLayout>
+                                    <ImageButton Grid.Row="0" Grid.Column="2"
+                                                Source="{Binding IsLikedImage}"
+                                                HorizontalOptions="End"
+                                                WidthRequest="30"
+                                                HeightRequest="30"
+                                                Command="{Binding LikeCommand}">
+                                    </ImageButton>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

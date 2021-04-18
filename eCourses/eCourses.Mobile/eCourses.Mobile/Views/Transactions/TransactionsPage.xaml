@@ -42,12 +42,22 @@
                                     </Grid.ColumnDefinitions>
 
                                     <StackLayout Orientation="Vertical" VerticalOptions="Center" Grid.Row="0" Grid.Column="1">
-                                        <Label Text="{Binding CourseName}" 
-                                               LineBreakMode="NoWrap" 
-                                                FontAttributes="Bold"
+                                        <Label  LineBreakMode="NoWrap" 
+                                               FontAttributes="Bold"
                                                Padding="0, 10, 0, 0"
-                                             
-                                               FontSize="16" />
+                                               FontSize="16">
+                                            <Label.FormattedText>
+                                            <FormattedString>
+                                                <FormattedString.Spans>
+                                                        <Span Text="Course: "></Span>
+                                                        <Span Text=" "></Span>
+                                                        <Span Text="{Binding CourseName}"></Span>
+                                                </FormattedString.Spans>
+                                            </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+
+                                 
 
                                         <Label 
                                                 LineBreakMode="NoWrap" 

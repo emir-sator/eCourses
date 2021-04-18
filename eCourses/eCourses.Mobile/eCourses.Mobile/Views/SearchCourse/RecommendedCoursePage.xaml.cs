@@ -44,9 +44,6 @@ namespace eCourses.Mobile.Views.SearchCourse
                 Review.IsVisible = true;
 
             }
-
-
-
         }
 
         private async void Course_ItemSelected(object sender, SelectedItemChangedEventArgs e)

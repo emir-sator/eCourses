@@ -3,16 +3,32 @@
                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                   xmlns:views="clr-namespace:eCourses.Mobile.Views"
                   xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                  xmlns:converters="clr-namespace:eCourses.Mobile.Converters"
                   mc:Ignorable="d"
                   x:Class="eCourses.Mobile.Views.MainPage">
+
+    <MasterDetailPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="ImageConverter" />
+
+        </ResourceDictionary>
+    </MasterDetailPage.Resources>
+
     <MasterDetailPage.Master>
         <views:MenuPage />
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
         <NavigationPage>
             <x:Arguments>
-                <ContentPage Title="eCourses"></ContentPage>
+                <ContentPage Title="eCourses">
+                    <StackLayout>
+                        <Image Source="logo.jpg" HorizontalOptions="Center" WidthRequest="400"
+                                     HeightRequest="400" ></Image>
+                        <Label HorizontalOptions="Center" VerticalOptions="Center" FontSize="25" TextColor="Teal" Text="Welcome to eCourses Mobile application"></Label>
+                    </StackLayout>
+                  
+                </ContentPage>
             </x:Arguments>
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">

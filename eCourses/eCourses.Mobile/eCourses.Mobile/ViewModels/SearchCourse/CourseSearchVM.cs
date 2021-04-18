@@ -27,13 +27,6 @@ namespace eCourses.Mobile.ViewModels.SearchCourse
             InitCommand = new Command(async () => await Init());
         }
 
-
-
-        //public CourseSearchVM(MCourse course)
-        //{
-        //    SelectedCourse = course;
-        //}
-
         MCategory _selectedCategory = null;
 
         public MCategory SelectedCategory
@@ -42,8 +35,6 @@ namespace eCourses.Mobile.ViewModels.SearchCourse
             set
             {
                 SetProperty(ref _selectedCategory, value);
-                //if (value != null)
-                //    InitCommand.Execute(null);
                 subcategoryList.Clear();
                 getSubcategories();
 
