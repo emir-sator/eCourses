@@ -28,5 +28,25 @@ namespace eCourses.WebAPI.Controllers
         {
             return await _service.GetTotal(ID);
         }
+
+        [HttpGet("{ID}/GetTotalInstructorsCourses")]
+        public async Task<float> GetTotalInstructorsCourses(int ID)
+        {
+            return await _service.GetTotalInstructorsCourses(ID);
+        }
+
+        [HttpGet("{ID}/GetTotalStudentsFromInstructorsCourses")]
+        public async Task<float> GetTotalStudentsFromInstructorsCourses(int ID)
+        {
+            return await _service.GetTotalStudentsFromInstructorsCourses(ID);
+        }
+
+        [HttpGet("{ID}/GetAverageInstructorsCoursesRating")]
+        public async Task<float> GetAverageInstructorsCoursesRating(int ID)
+        {
+            return await _service.GetAverageInstructorsCoursesRating(ID);
+        }
+
+
     }
 }

@@ -2,20 +2,20 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Tablix Name="Tablix2">
+      <Tablix Name="Tablix1">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>5.84762cm</Width>
+              <Width>5.92194cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.06344cm</Width>
+              <Width>2.10312cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.40198cm</Width>
+              <Width>1.39757cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.98948cm</Width>
+              <Width>2.72049cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -24,7 +24,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox14">
+                    <Textbox Name="Textbox2">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -42,7 +42,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox14</rd:DefaultName>
+                      <rd:DefaultName>Textbox2</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -59,7 +59,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox16">
+                    <Textbox Name="Textbox8">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -77,7 +77,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox16</rd:DefaultName>
+                      <rd:DefaultName>Textbox8</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -94,7 +94,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox18">
+                    <Textbox Name="Textbox4">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -112,7 +112,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox18</rd:DefaultName>
+                      <rd:DefaultName>Textbox4</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -129,7 +129,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox20">
+                    <Textbox Name="Textbox6">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -147,7 +147,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox20</rd:DefaultName>
+                      <rd:DefaultName>Textbox6</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -322,10 +322,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>0.42016cm</Top>
-        <Left>0.89641cm</Left>
+        <Top>0.31433cm</Top>
+        <Left>0.86995cm</Left>
         <Height>1.2cm</Height>
-        <Width>12.30251cm</Width>
+        <Width>12.14312cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -336,7 +336,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>5.50893in</Width>
+  <Width>5.83159in</Width>
   <Page>
     <PageHeader>
       <Height>2.54cm</Height>
@@ -350,7 +350,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Top 3 couses with best users rating</Value>
+                  <Value>Top 3 couses with worst users rating</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -361,8 +361,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.55245cm</Top>
-          <Left>1.84891cm</Left>
+          <Top>0.58636cm</Top>
+          <Left>1.925cm</Left>
           <Height>1.36729cm</Height>
           <Width>10.01417cm</Width>
           <Style>
@@ -382,16 +382,6 @@
         </Border>
       </Style>
     </PageHeader>
-    <PageFooter>
-      <Height>2.54cm</Height>
-      <PrintOnFirstPage>true</PrintOnFirstPage>
-      <PrintOnLastPage>true</PrintOnLastPage>
-      <Style>
-        <Border>
-          <Style>None</Style>
-        </Border>
-      </Style>
-    </PageFooter>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
     <LeftMargin>2cm</LeftMargin>
@@ -408,27 +398,13 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>fa153a32-e7ed-4b59-91fd-1861ec4c438e</rd:DataSourceID>
-    </DataSource>
-    <DataSource Name="eCoursesWinUIReportsDataForReports1">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>d4ff2376-b272-402e-9c09-f1db8aa0a037</rd:DataSourceID>
-    </DataSource>
-    <DataSource Name="eCoursesWinUIReportsDataForReports2">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>8971032d-6b3d-4bfc-96db-497cd2f45061</rd:DataSourceID>
+      <rd:DataSourceID>d073a663-dfe2-4a6f-923c-cf577b6c6dd8</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>eCoursesWinUIReportsDataForReports2</DataSourceName>
+        <DataSourceName>eCoursesWinUIReportsDataForReports</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -451,11 +427,11 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>eCourses.WinUI.Reports.DataForReports</rd:DataSetName>
-        <rd:TableName>Top3BestAverageRatingCourses_Result</rd:TableName>
-        <rd:ObjectDataSourceType>eCourses.WinUI.Reports.DataForReports.Top3BestAverageRatingCourses_Result, eCourses.WinUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>Top3WorstAverageRatingCourses_Result</rd:TableName>
+        <rd:ObjectDataSourceType>eCourses.WinUI.Reports.DataForReports.Top3WorstAverageRatingCourses_Result, eCourses.WinUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>e2c4df38-2378-4b63-aa2a-4cd9895e7cc0</rd:ReportID>
+  <rd:ReportID>19733bda-e37f-4db9-a7c6-62c6789a76b6</rd:ReportID>
 </Report>

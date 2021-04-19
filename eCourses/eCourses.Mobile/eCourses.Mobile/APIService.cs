@@ -348,6 +348,76 @@ namespace eCourses.Mobile
                 await Application.Current.MainPage.DisplayAlert("Error", stringBuilder.ToString(), "OK");
                 return default;
             }
+
+        }
+
+        public async Task<int> GetTotalInstructorsCourses<T>(int ID)
+        {
+            try
+            {
+                var url = $"{ApiURL}/{_route}/{ID}/GetTotalInstructorsCourses";
+
+                return await url.WithBasicAuth(Username, Password).GetJsonAsync<int>();
+            }
+            catch (FlurlHttpException ex)
+            {
+                var errors = await ex.GetResponseJsonAsync<Dictionary<string, string[]>>();
+
+                var stringBuilder = new StringBuilder();
+                foreach (var error in errors)
+                {
+                    stringBuilder.AppendLine($"{error.Key}, ${string.Join(",", error.Value)}");
+                }
+
+                await Application.Current.MainPage.DisplayAlert("Error", stringBuilder.ToString(), "OK");
+                return default;
+            }
+        }
+
+        public async Task<int> GetTotalStudentsFromInstructorsCourses<T>(int ID)
+        {
+            try
+            {
+                var url = $"{ApiURL}/{_route}/{ID}/GetTotalStudentsFromInstructorsCourses";
+
+                return await url.WithBasicAuth(Username, Password).GetJsonAsync<int>();
+            }
+            catch (FlurlHttpException ex)
+            {
+                var errors = await ex.GetResponseJsonAsync<Dictionary<string, string[]>>();
+
+                var stringBuilder = new StringBuilder();
+                foreach (var error in errors)
+                {
+                    stringBuilder.AppendLine($"{error.Key}, ${string.Join(",", error.Value)}");
+                }
+
+                await Application.Current.MainPage.DisplayAlert("Error", stringBuilder.ToString(), "OK");
+                return default;
+            }
+        }
+
+        public async Task<float> GetAverageInstructorsCoursesRating<T>(int ID)
+        {
+            try
+            {
+                var url = $"{ApiURL}/{_route}/{ID}/GetAverageInstructorsCoursesRating";
+
+                return await url.WithBasicAuth(Username, Password).GetJsonAsync<float>();
+            }
+            catch (FlurlHttpException ex)
+            {
+                var errors = await ex.GetResponseJsonAsync<Dictionary<string, string[]>>();
+
+                var stringBuilder = new StringBuilder();
+                foreach (var error in errors)
+                {
+                    stringBuilder.AppendLine($"{error.Key}, ${string.Join(",", error.Value)}");
+                }
+
+                await Application.Current.MainPage.DisplayAlert("Error", stringBuilder.ToString(), "OK");
+                return default;
+            }
         }
 
     }

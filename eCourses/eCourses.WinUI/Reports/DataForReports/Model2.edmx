@@ -4,32 +4,32 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="eCoursesBazaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="eCoursesBazaModel2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <Function Name="Top3BestAverageRatingCourses" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <EntityContainer Name="eCoursesBazaModelStoreContainer" />
+        <EntityContainer Name="eCoursesBazaModel2StoreContainer" />
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="eCoursesBazaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="eCoursesBazaEntities" annotation:LazyLoadingEnabled="true" >
-          <FunctionImport Name="Top3BestAverageRatingCourses" ReturnType="Collection(eCoursesBazaModel.Top3BestAverageRatingCourses_Result)" />
+      <Schema Namespace="eCoursesBazaModel2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="eCoursesBazaEntities2" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="Top3BestAverageRatingCourses" ReturnType="Collection(eCoursesBazaModel2.Top3BestAverageRatingCourses_Result)" />
         </EntityContainer>
         <ComplexType Name="Top3BestAverageRatingCourses_Result">
           <Property Type="String" Name="Name" Nullable="true" />
           <Property Type="String" Name="Language" Nullable="true" />
           <Property Type="Single" Name="Price" Nullable="false" />
-          <Property Type="Decimal" Name="Average_rating" Nullable="true" Precision="38" Scale="6" />
+          <Property Type="Double" Name="Average_rating" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="eCoursesBazaModelStoreContainer" CdmEntityContainer="eCoursesBazaEntities" >
-          <FunctionImportMapping FunctionImportName="Top3BestAverageRatingCourses" FunctionName="eCoursesBazaModel.Store.Top3BestAverageRatingCourses">
+        <EntityContainerMapping StorageEntityContainer="eCoursesBazaModel2StoreContainer" CdmEntityContainer="eCoursesBazaEntities2" >
+          <FunctionImportMapping FunctionImportName="Top3BestAverageRatingCourses" FunctionName="eCoursesBazaModel2.Store.Top3BestAverageRatingCourses">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="eCoursesBazaModel.Top3BestAverageRatingCourses_Result">
+              <ComplexTypeMapping TypeName="eCoursesBazaModel2.Top3BestAverageRatingCourses_Result">
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Language" ColumnName="Language" />
                 <ScalarProperty Name="Price" ColumnName="Price" />

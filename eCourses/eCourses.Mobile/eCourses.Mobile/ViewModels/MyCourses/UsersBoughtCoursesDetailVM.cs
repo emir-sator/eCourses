@@ -1,5 +1,6 @@
 ﻿using eCourses.Mobile.Helpers;
 using eCourses.Mobile.ViewModels.SearchCourse;
+using eCourses.Mobile.Views.Course;
 using eCourses.Model;
 using eCourses.Model.Request;
 using System;
@@ -8,6 +9,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace eCourses.Mobile.ViewModels.MyCourses
 {
@@ -56,16 +59,23 @@ namespace eCourses.Mobile.ViewModels.MyCourses
 
             }
         }
+        private readonly INavigation Navigation;
+        public ICommand ShowDetailCommand { get; set; }
         public UsersBoughtCoursesDetailVM()
         {
-
+            ShowDetailCommand = new Command(async () => await ShowDetail());
         }
-        public UsersBoughtCoursesDetailVM(MCourse course)
+        public UsersBoughtCoursesDetailVM(MCourse course, INavigation nav)
         {
+            this.Navigation = nav;
             Course = course;
             GetReview();
+            ShowDetailCommand = new Command(async () => await ShowDetail());
+        }
 
-
+        public async Task ShowDetail()
+        {
+            await Navigation.PushAsync(new InstructorDetailPage(Course.User));
         }
 
         public async Task Init(CourseSearchRequest request= null)

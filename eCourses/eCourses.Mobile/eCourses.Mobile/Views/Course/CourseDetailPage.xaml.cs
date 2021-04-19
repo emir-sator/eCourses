@@ -18,7 +18,6 @@ namespace eCourses.Mobile.Views.Course
     public partial class CourseDetailPage : ContentPage
     {
         private CourseDetailVM model = null;
-        private readonly APIService courseService = new APIService("Course");
         public CourseDetailPage(MCourse course)
         {
             InitializeComponent();

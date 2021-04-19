@@ -82,6 +82,7 @@ namespace eCourses.WinUI.Forms.Courses
                         };
                         await LoadList(request);
                     }
+                    break;
                 }
                 if (userRole.RoleID == 2)
                 {

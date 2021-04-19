@@ -58,23 +58,12 @@
                     </Label.FormattedText>
                 </Label>
 
-                <Frame 
-                 Padding="0"
-                 WidthRequest="100"
-                 HeightRequest="200" 
-                 CornerRadius="100"
-                 IsClippedToBounds="True"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                 BorderColor="Black"
-                    Margin="0,0,0,70">
-                    <Image Source="{Binding Course.Image, Converter={StaticResource ImageConverter}}"
-                 Aspect="AspectFill">
-                    </Image>
-                </Frame>
+                <Button x:Name="btnOpenBrowserGitHub" Command="{Binding ShowDetailCommand}" Text="View profile" BackgroundColor="Teal"  WidthRequest="100" HorizontalOptions="Center" IsVisible="true"/>
             </StackLayout>
-
-            <Label Text="Choose section: " Margin="20,20,20,0" FontSize="12"></Label>
+            
+            <Label Text="List of lectures" TextColor="Black" Margin="20,0,20,0" FontSize="16" VerticalTextAlignment="Start" HorizontalTextAlignment="Start" FontAttributes="Bold"></Label>
+            
+            <Label Text="Choose section: " Margin="20,0,20,0" FontSize="12"></Label>
             <Picker  ItemsSource="{Binding NewsectionList}" SelectedItem="{Binding SelectedSection}" ItemDisplayBinding="{Binding SectionNumber}" Margin="20,0,20,0"></Picker>
 
             <ListView ItemsSource="{Binding videoLectureList}" ItemSelected="ListView_ItemSelected" Margin="20,0,20,0">

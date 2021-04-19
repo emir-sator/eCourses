@@ -72,7 +72,7 @@ namespace eCourses.Mobile.ViewModels.Transactions
                     if (x.UserID == user.UserID)
                     {
                         x.CourseName = course.Name;
-                        x.TransactionDateString=x.TransactionDate.ToString("yyyy/MM/dd");
+                        x.TransactionDateString=x.TransactionDate.ToString("dd/MM/yyyy");
                         TransactionList.Add(x);
                     }
                 }

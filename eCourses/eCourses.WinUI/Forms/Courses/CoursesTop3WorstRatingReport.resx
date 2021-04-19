@@ -117,71 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnAddCourse.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAUNJREFUOE+N
-        kzGOgzAURF1wgXAdwhWAEwQll0LUcJZIIDgCaalIkGjo/u7z6ntNFoUtRrL9Z8bfY9us6yqv18thmiZp
-        21au16uEYWhxu92k73t5Pp+2rhjHUQwiCmAYBknTVIIgEGPMBqxRg6N8TMw8z3bSNI2cTicnOJ/PUte1
-        RRRFbh3O/X53JrYDXH0xyPPckS6Xy6YGVzsxtEFrPgH4Bozf62jY3BDY3pnZ9ZMBGoI1pM0CZ4aoKIrC
-        GZRlualpJtyO4ZqYEJYKjgAXjdX+18C/7qqqfg1sG98T2vLbpG0VcBy/Fsex1VgtQeyFCFENGL/X0XRd
-        JwZClmV/CEcGSZLYmn0Hew/p0zXCfTweP+8AA0g8T9+ETAiWwPTMKubZo+EbOANw9Jlo2/9MtgO+JCZq
-        xCLBkjDXBBgTmNYVy7LIF8EHZavEsmC9AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnSearch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAVNJREFUOE+N
-        UzEOgkAQvGAFFrTyAKAhVP5ALeiQCj5h4i9ItLWTwm/wB/5AjaEhYMmYOXNG5GIsBo7bnbnZuSDGccQw
-        DHg8Hu930zRo21auFb57+CZXqI2+73G9XuG6LkzTxHK5xHq9RlmWb9I3uC+4IDlNUxiGge12i8vlgtPp
-        hDAM5V6e51oBQjrgyWy83W6T0yh8PB6xWCxQVdWESEgHfHieh81mo7XadR0cx0GWZbMaIRgYZ6ZtXQOx
-        3+/h+/5sXzpg2gzsfD7PGhSiKEIQBNqaHIFpMzDO/N1wv99h2zYOh8OsRshb4FUxRAbGmVWR5N1uB8uy
-        UNf1hKggBeiCV8W0GRhnpm2ezHxWq9VM/C3wmTyvimkzMM5M2zyZZCEE4jieiMgQ1ccvkESyTmTi4Bd0
-        In87UPgUSZLkJfCvAwWKkFwUxUtA9zvrRD9rCuM44glE41KxOT43hQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="btnDeleteCourse.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAWVJREFUOE/V
-        k72qwkAQRn0A4wsoETUBbUVBUCyEEH2L2IqvkE4QEiwvVim1sbexsrALsRZFMaQR/AGNQqrvuoMSg0GE
-        W93iwO7O7tnMZibied7P7XbDK6fTCY1GA/l8nqjX6zgej4E9DNd19ch98CaYTCZIJBJQVZXgeR7j8Tiw
-        54Ev6PV6aDabUBQFsiwjlUrRnJHJZCBJEsXYXNM0XK9XX7Df7xGNRjEYDDAajT4yHA7BcRx2u50vYDnH
-        YjEUCgWUSqWPFItFuuxwOARTmM/niMfjsCzrI+w9TNN8fwPbtilvNn7kF+C5JggCNpvNcz1cUKvVsN1u
-        YRgG+v0+HMdBtVr9XpDL5bBcLqHrOjqdDtbrNR1ksa8E2Wz2b4J//AXJZJJ+FytVVp2z2QzT6ZSKptvt
-        UiydTocLLpcLRFFEq9WiW8Not9vUF+fz2Re8tvNqtUKlUiFRGOVyGYvF4nn43s6u/guZIvOb9Bx4RQAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="btnEditCourse.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAVVJREFUOE+d
-        kz+rglAYxvsUQhLU0tDaohAOgYKTQ2sNTg1NfYmGxhZxqSaXlnBR6AM4OQhCg0FTYVt/dXB5bh7ITjfr
-        4h1+cHiflx8PnHNKSZIIcRzjP5zPZ6F0P2SC4/GIIAje2G63JDcMA5qmIYqih+Qp2O/3YBgGLMuiWq2+
-        MB6P4bou+v0+BoMBNpvNu8A0TfA8T9szDocDEcuyDNu26ewpWC6XUBSFDgmpUJIkiKKIVquF6/VK538L
-        JpMJms0mabDb7RCGIZ1/F3ieh3K5jHq9DsuyCPP5nN75LEirchyHdruN4XBIZqqqYjabZTt3Pgscx0Gj
-        0UCv18PlciGzVDCdTrOdO58Fuq5jNBqljyWbFWpwu93oRUKhBnkUapDH1war1QqVSgW+75On+pv1ek2u
-        c7FY5AvSa+t2u6jVam9/4UGn08HpdHoVpF+SGhQiSRLhB8Z7PM9F8GtFAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <metadata name="CourseID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="txtName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Language.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DateCreated.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Price.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Description.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="courseListVMBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="Top3WorstAverageRatingCourses_ResultBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
 </root>

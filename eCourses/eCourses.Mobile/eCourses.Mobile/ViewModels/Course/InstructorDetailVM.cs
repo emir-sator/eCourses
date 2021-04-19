@@ -43,8 +43,33 @@ namespace eCourses.Mobile.ViewModels.Course
 
         }
 
+        int _totalStudents;
+        public int TotalStudents
+        {
+            get { return _totalStudents; }
+            set { SetProperty(ref _totalStudents, value); }
+        }
+
+        int _totalCourses;
+        public int TotalCourses
+        {
+            get { return _totalCourses; }
+            set { SetProperty(ref _totalCourses, value); }
+        }
+
+        float _totalRating;
+        public float TotalRating
+        {
+            get { return _totalRating; }
+            set { SetProperty(ref _totalRating, value); }
+        }
+
         public async Task InitCourses()
         {
+
+            TotalStudents = await courseService.GetTotalStudentsFromInstructorsCourses<int>(User.UserID);
+            TotalCourses = await courseService.GetTotalInstructorsCourses<int>(User.UserID);
+            TotalRating = await courseService.GetAverageInstructorsCoursesRating<float>(User.UserID);
             try
             {
 

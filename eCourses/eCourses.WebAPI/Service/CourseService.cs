@@ -139,5 +139,27 @@ namespace eCourses.WebAPI.Service
             var list = await _context.BuyCourses.Where(i => i.CourseID == CourseID).ToListAsync();
             return list.Count();
         }
+
+        public async Task<int> GetTotalInstructorsCourses(int UserID)
+        {
+            var list = await _context.Courses.Where(i => i.UserID == UserID).ToListAsync();
+            return list.Count();
+        }
+
+        public async Task<int> GetTotalStudentsFromInstructorsCourses(int UserID)
+        {
+            var list = await _context.BuyCourses.Where(i => i.Course.UserID == UserID).ToListAsync();
+            return list.Count();
+        }
+
+        public async Task<float> GetAverageInstructorsCoursesRating(int UserID)
+        {
+            var list = await _context.UserCourseReviews.Where(i => i.Course.UserID == UserID).ToListAsync();
+            if (list.Count() != 0)
+            {
+                return (float)list.Average(i => i.Rating);
+            }
+            return 0;
+        }
     }
 }

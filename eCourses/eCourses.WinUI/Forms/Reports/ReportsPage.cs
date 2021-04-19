@@ -51,7 +51,7 @@ namespace eCourses.WinUI.Forms.Reports
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            PanelHelper.SwapPanels(this.Parent, this, new CoursesTop3WorstRatingReport());
         }
     }
 }

@@ -17,13 +17,12 @@ namespace eCourses.Mobile.Views.MyCourses
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UserBoughtCoursesDetailPage : ContentPage
     {
-        private readonly APIService courseService = new APIService("Course");
         private readonly APIService reviewService = new APIService("Review");
         private UsersBoughtCoursesDetailVM model = null;
         public UserBoughtCoursesDetailPage(MCourse course)
         {
             InitializeComponent();
-            BindingContext = model = new UsersBoughtCoursesDetailVM(course);
+            BindingContext = model = new UsersBoughtCoursesDetailVM(course,this.Navigation);
         }
         protected async override void OnAppearing()
         {

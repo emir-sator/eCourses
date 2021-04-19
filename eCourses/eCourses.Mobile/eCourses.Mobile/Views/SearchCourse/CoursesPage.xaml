@@ -21,25 +21,27 @@
     <ContentPage.Content>
         <StackLayout>
             <StackLayout Orientation="Horizontal" Spacing="15" Padding="0, 10, 0, 10">
-                <Label Text="  Choose category:" 
+                <Label Text="Choose category:" 
                    FontSize="18"
                    TextColor="DimGray"
                    Margin="5"
-                   VerticalTextAlignment="End"/>
+                   VerticalTextAlignment="End"
+                   HorizontalOptions="Center"/>
                 <Picker  ItemsSource="{Binding categoryList}" SelectedItem="{Binding SelectedCategory}" ItemDisplayBinding="{Binding Name}" WidthRequest="250" HorizontalOptions="CenterAndExpand" Margin="29,0,0,0"></Picker>
             </StackLayout>
 
             <StackLayout Orientation="Horizontal" Spacing="15" Padding="0, 10, 0, 10">
-                <Label Text="  Choose subcategory:" 
+                <Label Text="Choose subcategory:" 
                    FontSize="18"
                    TextColor="DimGray"
                    Margin="5"
-                   VerticalTextAlignment="End"/>
+                   VerticalTextAlignment="End"
+                   HorizontalOptions="Center"/>
                 <Picker  ItemsSource="{Binding subcategoryList}" SelectedItem="{Binding SelectedSubcategory}" ItemDisplayBinding="{Binding Name}" WidthRequest="250" HorizontalOptions="CenterAndExpand"></Picker>
             </StackLayout>
 
 
-            <ListView ItemsSource="{Binding courseList}" ItemSelected="Course_ItemSelected">
+            <ListView ItemsSource="{Binding courseList}" ItemSelected="Course_ItemSelected"  WidthRequest="500">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -111,7 +113,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

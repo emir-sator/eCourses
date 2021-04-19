@@ -11,7 +11,7 @@ namespace eCourses.WinUI.Reports.DataForReports
 {
     using System;
     
-    public partial class Top3BestAverageRatingCourses_Result
+    public partial class Top3WorstAverageRatingCourses_Result
     {
         public string Name { get; set; }
         public string Language { get; set; }

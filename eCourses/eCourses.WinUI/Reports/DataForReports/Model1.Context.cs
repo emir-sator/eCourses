@@ -15,10 +15,10 @@ namespace eCourses.WinUI.Reports.DataForReports
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class eCoursesBazaEntities : DbContext
+    public partial class eCoursesBazaEntities1 : DbContext
     {
-        public eCoursesBazaEntities()
-            : base("name=eCoursesBazaEntities")
+        public eCoursesBazaEntities1()
+            : base("name=eCoursesBazaEntities1")
         {
         }
     
@@ -28,9 +28,9 @@ namespace eCourses.WinUI.Reports.DataForReports
         }
     
     
-        public virtual ObjectResult<Top3BestAverageRatingCourses_Result> Top3BestAverageRatingCourses()
+        public virtual ObjectResult<Top3WorstAverageRatingCourses_Result> Top3WorstAverageRatingCourses()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Top3BestAverageRatingCourses_Result>("Top3BestAverageRatingCourses");
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Top3WorstAverageRatingCourses_Result>("Top3WorstAverageRatingCourses");
         }
     }
 }

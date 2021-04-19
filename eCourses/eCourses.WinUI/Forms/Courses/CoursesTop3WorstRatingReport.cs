@@ -13,18 +13,18 @@ using System.Windows.Forms;
 
 namespace eCourses.WinUI.Forms.Courses
 {
-    public partial class CourseTop3BestRatingReport : UserControl
+    public partial class CoursesTop3WorstRatingReport : UserControl
     {
-        public CourseTop3BestRatingReport()
+        public CoursesTop3WorstRatingReport()
         {
             InitializeComponent();
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
         {
-            using (eCoursesBazaEntities2 db = new eCoursesBazaEntities2())
+            using (eCoursesBazaEntities1 db = new eCoursesBazaEntities1())
             {
-                Top3BestAverageRatingCourses_ResultBindingSource.DataSource = db.Top3BestAverageRatingCourses().ToList();
+                Top3WorstAverageRatingCourses_ResultBindingSource.DataSource = db.Top3WorstAverageRatingCourses().ToList();
                 reportViewer1.RefreshReport();
             };
         }
@@ -33,7 +33,5 @@ namespace eCourses.WinUI.Forms.Courses
         {
             PanelHelper.SwapPanels(this.Parent, this, new ReportsPage());
         }
-
-  
     }
 }
