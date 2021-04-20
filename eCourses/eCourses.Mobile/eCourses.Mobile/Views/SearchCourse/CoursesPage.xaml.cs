@@ -1,4 +1,5 @@
-﻿using eCourses.Mobile.ViewModels.Course;
+﻿using eCourses.Mobile.Helpers;
+using eCourses.Mobile.ViewModels.Course;
 using eCourses.Mobile.ViewModels.SearchCourse;
 using eCourses.Mobile.Views.Course;
 using eCourses.Model;
@@ -18,17 +19,24 @@ namespace eCourses.Mobile.Views.SearchCourse
     {
         public APIService courseService = new APIService("Course");
         private CourseSearchVM modelSearchCourse = null;
-        
+        MUser _user;
         public CoursesPage()
         {
             InitializeComponent();
+            BindingContext = modelSearchCourse = new CourseSearchVM();
+        }
+        public CoursesPage(MUser user)
+        {
+            InitializeComponent();
+            _user = user;
+            SignedInUser.User = user;
             BindingContext = modelSearchCourse = new CourseSearchVM();
            
         }
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            await modelSearchCourse.Init();
+            await modelSearchCourse.Init(_user);
         
        }
 

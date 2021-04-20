@@ -1,4 +1,5 @@
-﻿using eCourses.Mobile.ViewModels.Course;
+﻿using eCourses.Mobile.Helpers;
+using eCourses.Mobile.ViewModels.Course;
 using eCourses.Mobile.ViewModels.SearchCourse;
 using eCourses.Mobile.Views.SearchCourse;
 using eCourses.Model;
@@ -28,10 +29,13 @@ namespace eCourses.Mobile.Views.Course
 
             return true;
         }
-        public PaymentPage(MCourse course)
+        MUser _user;
+        public PaymentPage(MCourse course, MUser user)
         {
             InitializeComponent();
-            var nav = new NavigationPage(new CoursesPage());
+            _user = user;
+            SignedInUser.User =user; 
+            var nav = new NavigationPage(new CoursesPage(_user));
             navigation = nav.Navigation;
             BindingContext = model = new PaymentVM(navigation)
             {

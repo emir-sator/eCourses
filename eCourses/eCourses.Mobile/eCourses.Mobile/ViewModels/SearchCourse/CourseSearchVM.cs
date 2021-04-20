@@ -22,9 +22,11 @@ namespace eCourses.Mobile.ViewModels.SearchCourse
         public ObservableCollection<MCategory> categoryList { get; set; } = new ObservableCollection<MCategory>();
         public ObservableCollection<MSubcategory> subcategoryList { get; set; } = new ObservableCollection<MSubcategory>();
         public ICommand InitCommand { get; set; }
+
+        readonly MUser user = SignedInUser.User;
         public CourseSearchVM()
         {
-            InitCommand = new Command(async () => await Init());
+            InitCommand = new Command(async () => await Init(user));
         }
 
         MCategory _selectedCategory = null;
@@ -75,7 +77,7 @@ namespace eCourses.Mobile.ViewModels.SearchCourse
             }
         }
 
-        public async Task Init()
+        public async Task Init(MUser user)
         {
             try
             {
@@ -110,12 +112,12 @@ namespace eCourses.Mobile.ViewModels.SearchCourse
                             var DoesItContain = usersBoughtCourses.Where(m => m.CourseID == x.CourseID).Any();
                             if (usersBoughtCourses.Count > 0)
                             {
-                                if (DoesItContain == false)
+                                if (DoesItContain == false&&x.UserID!=user.UserID)
                                 {
                                     courseList.Add(new CourseVM(x));
                                 }
                             }                           
-                            else
+                            else if(x.UserID!=user.UserID)
                             {
                                 courseList.Add(new CourseVM(x));
                             }

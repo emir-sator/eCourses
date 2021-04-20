@@ -244,7 +244,7 @@ namespace eCourses.Mobile.ViewModels.Course
                         };
                         await transactionService.Insert<MTransaction>(TransReq);
                         await buyCourseService.Insert<MBuyCourse>(request);
-                        await Navigation.PushAsync(new CoursesPage());
+                        await Navigation.PushAsync(new CoursesPage(user));
                         Console.Write(Course.Name + "Payment Successful");
                         
                         UserDialogs.Instance.HideLoading();

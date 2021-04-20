@@ -44,12 +44,12 @@ namespace eCourses.Mobile.ViewModels.SearchCourse
                     var DoesItContain = usersBoughtCourses.Where(m => m.CourseID == course.CourseID).Any();
                     if (usersBoughtCourses.Count > 0)
                     {
-                        if (DoesItContain == false)
+                        if (DoesItContain == false&&course.UserID!=userID)
                         {
                             courseList.Add(new CourseVM(course));
                         }
                     }
-                    else
+                    else if(course.UserID!=userID)
                     {
                         courseList.Add(new CourseVM(course));
                     }

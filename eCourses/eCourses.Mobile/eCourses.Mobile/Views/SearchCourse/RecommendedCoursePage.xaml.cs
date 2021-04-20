@@ -1,6 +1,7 @@
 ﻿using eCourses.Mobile.Helpers;
 using eCourses.Mobile.ViewModels.SearchCourse;
 using eCourses.Mobile.Views.Course;
+using eCourses.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,8 +17,8 @@ namespace eCourses.Mobile.Views.SearchCourse
     public partial class RecommendedCoursePage : ContentPage
     {
         private readonly APIService recommendService = new APIService("Recommendation");
-        private readonly APIService courseService = new APIService("Course");
         private RecommendedCourseVM model = null;
+        MUser _user;
         public RecommendedCoursePage()
         {
             InitializeComponent();
@@ -25,8 +26,9 @@ namespace eCourses.Mobile.Views.SearchCourse
         }
         protected async override void OnAppearing()
         {
+            _user = SignedInUser.User;
             base.OnAppearing();
-            await model.Init();
+            await model.Init(_user);
             int userID = SignedInUser.User.UserID;
             var recommendCourses = await recommendService.GetRecommandedCourses(userID);
 
@@ -35,14 +37,12 @@ namespace eCourses.Mobile.Views.SearchCourse
                 noReviews.IsVisible = true;
                 Review.IsVisible = false;
                 CoursesForYou.IsVisible = false;
-
             }
             else
             {
                 noReviews.IsVisible = false;
                 CoursesForYou.IsVisible = true;
                 Review.IsVisible = true;
-
             }
         }
 

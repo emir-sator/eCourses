@@ -1,4 +1,5 @@
-﻿using eCourses.Mobile.ViewModels.SearchCourse;
+﻿using eCourses.Mobile.Helpers;
+using eCourses.Mobile.ViewModels.SearchCourse;
 using eCourses.Mobile.Views.Course;
 using eCourses.Mobile.Views.VideoPlayer;
 using eCourses.Model;
@@ -96,9 +97,10 @@ namespace eCourses.Mobile.ViewModels.Course
         {
             await Navigation.PushAsync(new InstructorDetailPage(Course.User));
         }
+        MUser user = SignedInUser.User;
         public async Task Buy()
         {
-            await Navigation.PushAsync(new PaymentPage(Course));
+            await Navigation.PushAsync(new PaymentPage(Course,user));
         }
 
         public async Task Watch()
