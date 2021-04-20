@@ -18,7 +18,7 @@
                 <Frame 
                  Padding="0"
                  WidthRequest="140"
-                 HeightRequest="240" 
+                 HeightRequest="280" 
                  IsClippedToBounds="True"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
@@ -66,10 +66,16 @@
                 <Label Grid.Row="1" Grid.Column="2" Text="{Binding TotalRating}" HorizontalOptions="Center"/>
 
             </Grid>
+            
+            
+            <Label Text="Get in touch with instructor" FontSize="16" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,20,0,0"></Label>
+            <Label Text="{Binding User.Email}" FontSize="12" HorizontalOptions="Center"></Label>
+            <ImageButton Source="email.png" VerticalOptions="Center" HorizontalOptions="Center"
+                    Command="{Binding EmailCommand}" BackgroundColor="Transparent"/>
 
 
 
-            <Label  Margin="0,30,0,20" HorizontalOptions="Center">
+            <Label  Margin="0,30,0,10" HorizontalOptions="Center" >
                 <Label.FormattedText>
                     <FormattedString>
                         <FormattedString.Spans>

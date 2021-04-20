@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace eCourses.Mobile.ViewModels.Course
@@ -24,9 +25,11 @@ namespace eCourses.Mobile.ViewModels.Course
         {
             User = user;
             InitCommand = new Command(async () => await InitCourses());
+            EmailCommand = new Command(async () => await ExecuteEmailCommand());
         }
 
         public ICommand InitCommand { get; set; }
+        public ICommand EmailCommand { get; set; }
 
         private MUser _user;
         public MUser User
@@ -93,6 +96,23 @@ namespace eCourses.Mobile.ViewModels.Course
             {
 
             }
+        }
+
+        async Task ExecuteEmailCommand()
+        {
+            try
+            {
+                await Email.ComposeAsync(string.Empty, string.Empty, User.Email);
+            }
+            catch (Exception ex)
+            {
+                ProcessException(ex);
+            }
+        }
+        void ProcessException(Exception ex)
+        {
+            if (ex != null)
+                Application.Current.MainPage.DisplayAlert("Error", ex.Message, "OK");
         }
 
 

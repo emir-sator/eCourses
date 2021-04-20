@@ -132,6 +132,7 @@
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="courses.png" />
     <Content Include="creditcard.png" />
+    <Content Include="email.png" />
     <Content Include="empty.png" />
     <Content Include="heart-empty.png" />
     <Content Include="heart.png" />
