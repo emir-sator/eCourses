@@ -22,7 +22,7 @@ Some of other functionalities of the eCourses project applications are:
 
          •	Reporting
 
-Remark: Functionalities like searching and buying courses, and watching video lessons of participants are related only to the mobile application, while functionalities such as reporting by the administrator, viewing and managing data by the administrator or creating courses by the instructor would be done exclusively over the desktop applications.
+Notes: Functionalities like searching and buying courses, and watching video lessons of participants are related only to the mobile application, while functionalities such as reporting by the administrator, viewing and managing data by the administrator or creating courses by the instructor would be done exclusively over the desktop applications.
 
 Tools and technologies that I used to create applications are:
 
@@ -46,6 +46,8 @@ Rating courses are implemented using a Syncfusion rating system (https://www.syn
 As for uploading video lessons, they are designed so that to add video lessons you need to use the URL of the video located on one of the cloud solutions such as: https://res.cloudinary.com/dkafrzcco/video/upload/v1618394001/Videos/Motivational_video___This_will_change_your_mind___whatsapp_30_sec_video___gstqeh.mp4  and I used Octane Video Player on Xamarin page to watch those video lessons. 
 
 The newly registered user will take on two roles: Instructor and Student. The application is designed so that the user of the application will be able to buy courses and watch video lessons, but will also have the ability to create and add their own course.
+
+Before starting the application, you need to set up startup projects property to multiple startup projects so you can properly test applications. You will achieve that by right-clicking on solution properties -> Set Startup Projects... -> choose the multiple startup projects, and from the list of projects in solution, change Action from "None" to "Start" for the eCourses.WebAPI, eCourses.Mobile.UWP and eCourses.WinUI projects.
 
 Login credentials
 
