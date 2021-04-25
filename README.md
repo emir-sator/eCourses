@@ -22,7 +22,11 @@ Some of other functionalities of the eCourses project applications are:
 
          •	Reporting
 
-Notes: Functionalities like searching and buying courses, and watching video lessons of participants are related only to the mobile application, while functionalities such as reporting by the administrator, viewing and managing data by the administrator or creating courses by the instructor would be done exclusively over the desktop applications.
+Notes: 
+
+Before starting the application, you need to type "update-database" in Package Manager Console and press enter. After that, database will be created with test data. Then, you need to set up startup projects property to multiple startup projects so you can properly test applications. You will achieve that by right-clicking on solution properties -> Set Startup Projects... -> choose the multiple startup projects, and from the list of projects in solution, change Action from "None" to "Start" for the eCourses.WebAPI, eCourses.Mobile.UWP and eCourses.WinUI projects.
+
+Functionalities like searching and buying courses, and watching video lessons of participants are related only to the mobile application, while functionalities such as reporting by the administrator, viewing and managing data by the administrator or creating courses by the instructor would be done exclusively over the desktop applications.
 
 Tools and technologies that I used to create applications are:
 
@@ -47,7 +51,7 @@ As for uploading video lessons, they are designed so that to add video lessons y
 
 The newly registered user will take on two roles: Instructor and Student. The application is designed so that the user of the application will be able to buy courses and watch video lessons, but will also have the ability to create and add their own course.
 
-Before starting the application, you need to set up startup projects property to multiple startup projects so you can properly test applications. You will achieve that by right-clicking on solution properties -> Set Startup Projects... -> choose the multiple startup projects, and from the list of projects in solution, change Action from "None" to "Start" for the eCourses.WebAPI, eCourses.Mobile.UWP and eCourses.WinUI projects.
+
 
 Login credentials
 
