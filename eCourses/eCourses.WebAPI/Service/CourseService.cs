@@ -35,7 +35,7 @@ namespace eCourses.WebAPI.Service
 
             if (!string.IsNullOrWhiteSpace(request?.Name))
             {
-                query = query.Where(x => x.Name.StartsWith(request.Name)).Include(i => i.User).OrderBy(c => c.Name);
+                query = query.Where(x => x.Name.Contains(request.Name)).Include(i => i.User).OrderBy(c => c.Name);
             }
             var list = await query.ToListAsync();
 

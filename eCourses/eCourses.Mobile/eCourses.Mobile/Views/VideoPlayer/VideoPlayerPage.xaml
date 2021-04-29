@@ -6,6 +6,19 @@
     <ContentPage.BindingContext>
         <vm:VideoPlayerVM/>
     </ContentPage.BindingContext>
-    <o:VideoPlayer x:Name="videoPlayer" Source="{Binding Lecture.URL}" AutoPlay="True" />
+    <StackLayout>
+        <Label HorizontalOptions="Start" FontSize="18" FontAttributes="Bold">
+            <Label.FormattedText>
+                <FormattedString>
+                    <FormattedString.Spans>
+                        <Span Text="Lecture:" />
+                        <Span Text=" "></Span>
+                        <Span Text="{Binding Lecture.LectureName}" />
+                    </FormattedString.Spans>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
 
+        <o:VideoPlayer x:Name="videoPlayer" Source="{Binding Lecture.URL}" AutoPlay="True" />
+    </StackLayout>
 </ContentPage>

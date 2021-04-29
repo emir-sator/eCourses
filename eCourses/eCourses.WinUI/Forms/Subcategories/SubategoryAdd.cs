@@ -32,12 +32,14 @@ namespace eCourses.WinUI.Forms.Categories_and_Subcategories
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
-            var subcategoryCategories = Convert.ToInt32(cbCategory.SelectedValue);
+            var category = await categoryService.GetById<MCategory>(Convert.ToInt32(cbCategory.SelectedValue));
             
             var request = new SubcategoryUpsertRequest()
             {
                 Name = txtName.Text,
-                CategoryID=subcategoryCategories
+                CategoryID=category.CategoryID,
+                CategoryName=category.Name
+                
                 
             };
 

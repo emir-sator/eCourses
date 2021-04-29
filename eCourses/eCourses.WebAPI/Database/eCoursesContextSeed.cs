@@ -164,13 +164,13 @@ namespace eCourses.WebAPI.Database
                 new Category { CategoryID = 4, Name = "Business" }
                 );
             modelBuilder.Entity<Subcategory>().HasData(
-                new Subcategory { SubcategoryID = 1, Name = "Web Development", CategoryID = 1 },
-                new Subcategory { SubcategoryID = 2, Name = "Game Development", CategoryID = 1 },
-                new Subcategory { SubcategoryID = 3, Name = "Web Design", CategoryID = 2 },
-                new Subcategory { SubcategoryID = 4, Name = "Game Design", CategoryID = 2 },
-                new Subcategory { SubcategoryID = 5, Name = "Advertising", CategoryID = 3 },
-                new Subcategory { SubcategoryID = 6, Name = "Business strategy ", CategoryID = 4 },
-                new Subcategory { SubcategoryID = 7, Name = "3D Design ", CategoryID = 2 }
+                new Subcategory { SubcategoryID = 1, Name = "Web Development", CategoryID = 1, CategoryName= "Development" },
+                new Subcategory { SubcategoryID = 2, Name = "Game Development", CategoryID = 1, CategoryName = "Development" },
+                new Subcategory { SubcategoryID = 3, Name = "Web Design", CategoryID = 2, CategoryName="Design" },
+                new Subcategory { SubcategoryID = 4, Name = "Game Design", CategoryID = 2, CategoryName = "Design" },
+                new Subcategory { SubcategoryID = 5, Name = "Advertising", CategoryID = 3, CategoryName = "Marketing" },
+                new Subcategory { SubcategoryID = 6, Name = "Business strategy ", CategoryID = 4, CategoryName= "Business"},
+                new Subcategory { SubcategoryID = 7, Name = "3D Design ", CategoryID = 2, CategoryName = "Design" }
 
                 );
             modelBuilder.Entity<UserRoles>().HasData(

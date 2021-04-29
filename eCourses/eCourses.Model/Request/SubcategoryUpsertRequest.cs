@@ -13,5 +13,6 @@ namespace eCourses.Model.Request
         public string Name { get; set; }
         [Required]
         public int CategoryID { get; set; }
+        public string CategoryName { get; set; }
     }
 }

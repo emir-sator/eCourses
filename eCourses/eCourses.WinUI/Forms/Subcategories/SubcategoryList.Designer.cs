@@ -34,10 +34,11 @@ namespace eCourses.WinUI.Forms.Subcategories
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.dgvSubcategories = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubcategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
+            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubcategories)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,15 +85,28 @@ namespace eCourses.WinUI.Forms.Subcategories
             this.dgvSubcategories.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.txtName,
             this.SubcategoryID,
-            this.CategoryID});
+            this.CategoryID,
+            this.CategoryName});
             this.dgvSubcategories.Location = new System.Drawing.Point(214, 116);
             this.dgvSubcategories.Name = "dgvSubcategories";
             this.dgvSubcategories.ReadOnly = true;
             this.dgvSubcategories.Size = new System.Drawing.Size(282, 264);
             this.dgvSubcategories.TabIndex = 40;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.DarkRed;
+            this.label1.Location = new System.Drawing.Point(265, 495);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(457, 13);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "*Once you delete a subcategory, all courses and other data related to it are goin" +
+    "g to be deleted!";
+            // 
             // txtName
             // 
+            this.txtName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.txtName.DataPropertyName = "Name";
             this.txtName.HeaderText = "Subcategory name";
             this.txtName.Name = "txtName";
@@ -112,17 +126,14 @@ namespace eCourses.WinUI.Forms.Subcategories
             this.CategoryID.HeaderText = "CategoryID";
             this.CategoryID.Name = "CategoryID";
             this.CategoryID.ReadOnly = true;
+            this.CategoryID.Visible = false;
             // 
-            // label1
+            // CategoryName
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.DarkRed;
-            this.label1.Location = new System.Drawing.Point(265, 495);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(457, 13);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "*Once you delete a subcategory, all courses and other data related to it are goin" +
-    "g to be deleted!";
+            this.CategoryName.DataPropertyName = "CategoryName";
+            this.CategoryName.HeaderText = "Category";
+            this.CategoryName.Name = "CategoryName";
+            this.CategoryName.ReadOnly = true;
             // 
             // SubcategoryList
             // 
@@ -147,9 +158,10 @@ namespace eCourses.WinUI.Forms.Subcategories
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridView dgvSubcategories;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtName;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubcategoryID;
         private System.Windows.Forms.DataGridViewTextBoxColumn CategoryID;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CategoryName;
     }
 }
