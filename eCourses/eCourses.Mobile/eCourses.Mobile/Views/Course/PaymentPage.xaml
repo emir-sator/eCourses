@@ -100,7 +100,7 @@
                     <Label x:Name="ErrorLabel_Year" IsVisible="{Binding IsError_Year}" TextColor="Red" FontSize="13"/>
                 </StackLayout>
                 <StackLayout Grid.Row="2" Grid.ColumnSpan="2">
-                    <Entry x:Name="Cvv" Placeholder="Cvv code" Text="{Binding Cvc}" TextChanged="Cvv_changed" Unfocused="Cvv_unfocused" ReturnType="Next" Keyboard="Keyboard.Numeric"/>
+                    <Entry x:Name="Cvv" Placeholder="Cvv code" Text="{Binding Cvc}" TextChanged="Cvv_changed" Unfocused="Cvv_unfocused" ReturnType="Next" Keyboard="Keyboard.Numeric" IsPassword="True"/>
                     <Label x:Name="ErrorLabel_Cvv" IsVisible="{Binding IsError_Cvv}" TextColor="Red" FontSize="13" />
                 </StackLayout>
             </Grid>

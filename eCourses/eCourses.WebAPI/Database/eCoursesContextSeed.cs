@@ -337,10 +337,63 @@ namespace eCourses.WebAPI.Database
                               Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
                               UserID = 8
 
-                          }
+                          },
+                           new Course
+                           {
+                               CourseID = 12,
+                               Name = "Python for DataScience",
+                               SubcategoryID = 6,
+                               Language = "English",
+                               Price = 45.99f,
+                               DateCreated = DateTime.Now,
+                               Image = File.ReadAllBytes("Files/test.jpg"),
+                               Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+                               UserID = 9
+
+                           },
+                            new Course
+                            {
+                                CourseID = 13,
+                                Name = "testni2",
+                                SubcategoryID = 6,
+                                Language = "English",
+                                Price = 15.99f,
+                                DateCreated = DateTime.Now,
+                                Image = File.ReadAllBytes("Files/test.jpg"),
+                                Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+                                UserID = 8
+
+                            },
+                             new Course
+                             {
+                                 CourseID = 14,
+                                 Name = "testni3",
+                                 SubcategoryID = 6,
+                                 Language = "English",
+                                 Price = 10.99f,
+                                 DateCreated = DateTime.Now,
+                                 Image = File.ReadAllBytes("Files/test.jpg"),
+                                 Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+                                 UserID = 9
+
+                             },
+                              new Course
+                              {
+                                  CourseID = 15,
+                                  Name = "R programming language",
+                                  SubcategoryID = 6,
+                                  Language = "English",
+                                  Price = 35.99f,
+                                  DateCreated = DateTime.Now,
+                                  Image = File.ReadAllBytes("Files/test.jpg"),
+                                  Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+                                  UserID = 4
+
+                              }
 
 
                 );
+
             modelBuilder.Entity<Section>().HasData(
                 new Section { SectionID = 1, SectionNumber = 1 },
                 new Section { SectionID = 2, SectionNumber = 2 },

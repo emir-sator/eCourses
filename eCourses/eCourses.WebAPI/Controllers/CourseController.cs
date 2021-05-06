@@ -14,7 +14,7 @@ namespace eCourses.WebAPI.Controllers
             _service = service;
         }
         [HttpGet("{ID}/Lectures")]
-        public async Task<List<MVideoLecture>> GetLectures(int ID, [FromQuery] CourseSearchRequest request)
+        public async Task<List<MVideoLecture>> GetLectures(int ID, [FromQuery] VideoLectureSearchRequest request)
         {
             return await _service.GetLectures(ID, request);
         }

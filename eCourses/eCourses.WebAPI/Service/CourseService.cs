@@ -80,11 +80,14 @@ namespace eCourses.WebAPI.Service
 
             return _mapper.Map<MCourse>(entity);
         }
-        public async Task<List<MVideoLecture>> GetLectures(int ID, CourseSearchRequest request)
+        public async Task<List<MVideoLecture>> GetLectures(int ID, VideoLectureSearchRequest request)
         {
             var query = _context.VideoLectures.Where(i => i.CourseID == ID)
                 .AsQueryable();
-
+            if (request.SectionID != null)
+            {
+                query = query.Where(vl => vl.SectionID == request.SectionID);
+            }
             var list = await query.ToListAsync();
 
             return _mapper.Map<List<MVideoLecture>>(list);

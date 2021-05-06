@@ -219,7 +219,7 @@ namespace eCourses.Mobile
             }
         }
 
-        public async Task<T> GetLectures<T>(int ID, CourseSearchRequest search)
+        public async Task<T> GetLectures<T>(int ID, VideoLectureSearchRequest search)
         {
             try
             {

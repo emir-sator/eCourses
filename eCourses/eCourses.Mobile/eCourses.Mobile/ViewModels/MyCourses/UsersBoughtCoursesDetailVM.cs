@@ -14,7 +14,7 @@ using Xamarin.Forms;
 
 namespace eCourses.Mobile.ViewModels.MyCourses
 {
-    public class UsersBoughtCoursesDetailVM:BaseVM
+    public class UsersBoughtCoursesDetailVM : BaseVM
     {
         private readonly APIService courseService = new APIService("Course");
         private readonly APIService sectionService = new APIService("Section");
@@ -29,7 +29,7 @@ namespace eCourses.Mobile.ViewModels.MyCourses
         public MCourse Course
         {
             get { return _course; }
-            set { SetProperty(ref _course,value); }
+            set { SetProperty(ref _course, value); }
         }
 
         private decimal rating;
@@ -46,7 +46,7 @@ namespace eCourses.Mobile.ViewModels.MyCourses
             set { SetProperty(ref courseReview, value); }
         }
 
-    
+
 
         MSection _selectedSection = null;
         public MSection SelectedSection
@@ -78,14 +78,22 @@ namespace eCourses.Mobile.ViewModels.MyCourses
             await Navigation.PushAsync(new InstructorDetailPage(Course.User));
         }
 
-        public async Task Init(CourseSearchRequest request= null)
+        public async Task Init()
         {
             videoLectureList.Clear();
             try
             {
-                
-                var lectures = await courseService.GetLectures<List<MVideoLecture>>(Course.CourseID, request);
-                foreach(var lecture in lectures)
+                VideoLectureSearchRequest reqq=new VideoLectureSearchRequest();
+                if (SelectedSection != null)
+                {
+                    reqq = new VideoLectureSearchRequest
+                    {
+                        SectionID = SelectedSection.SectionID
+                    };
+                }
+
+                var lectures = await courseService.GetLectures<List<MVideoLecture>>(Course.CourseID, reqq);
+                foreach (var lecture in lectures)
                 {
                     videoLectureList.Add(lecture);
 
@@ -142,7 +150,7 @@ namespace eCourses.Mobile.ViewModels.MyCourses
             if (list != null)
                 CourseReview = list.FirstOrDefault();
         }
-    
+
 
 
         public async void GetLectures()
