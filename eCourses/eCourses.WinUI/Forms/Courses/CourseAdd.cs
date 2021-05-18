@@ -158,7 +158,7 @@ namespace eCourses.WinUI.Forms.Courses
             }
         }
 
-        bool DoesItContainDot(char c)
+        bool DoesItContainComma(char c)
         {
             if (c != ',')
             {
@@ -172,7 +172,7 @@ namespace eCourses.WinUI.Forms.Courses
         {
             foreach (char c in str)
             {
-                if ((c < '0' || c > '9') && DoesItContainDot(c))
+                if ((c < '0' || c > '9') && DoesItContainComma(c))
                     return false;
             }
 
