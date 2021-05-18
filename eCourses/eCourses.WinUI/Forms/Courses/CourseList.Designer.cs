@@ -29,7 +29,6 @@ namespace eCourses.WinUI.Forms.Courses
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CourseList));
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddCourse = new System.Windows.Forms.Button();
@@ -43,19 +42,16 @@ namespace eCourses.WinUI.Forms.Courses
             this.Language = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateCreated = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbSubcategories = new System.Windows.Forms.ComboBox();
-            this.courseListVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourses)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.courseListVMBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(66, 10);
+            this.label1.Location = new System.Drawing.Point(38, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 20);
             this.label1.TabIndex = 43;
@@ -66,7 +62,7 @@ namespace eCourses.WinUI.Forms.Courses
             this.btnAddCourse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCourse.Image")));
-            this.btnAddCourse.Location = new System.Drawing.Point(540, 67);
+            this.btnAddCourse.Location = new System.Drawing.Point(568, 67);
             this.btnAddCourse.Name = "btnAddCourse";
             this.btnAddCourse.Size = new System.Drawing.Size(41, 37);
             this.btnAddCourse.TabIndex = 41;
@@ -78,7 +74,7 @@ namespace eCourses.WinUI.Forms.Courses
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(351, 80);
+            this.btnSearch.Location = new System.Drawing.Point(323, 80);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(24, 24);
             this.btnSearch.TabIndex = 40;
@@ -90,7 +86,7 @@ namespace eCourses.WinUI.Forms.Courses
             this.btnDeleteCourse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeleteCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteCourse.Image")));
-            this.btnDeleteCourse.Location = new System.Drawing.Point(634, 67);
+            this.btnDeleteCourse.Location = new System.Drawing.Point(662, 67);
             this.btnDeleteCourse.Name = "btnDeleteCourse";
             this.btnDeleteCourse.Size = new System.Drawing.Size(41, 37);
             this.btnDeleteCourse.TabIndex = 39;
@@ -102,7 +98,7 @@ namespace eCourses.WinUI.Forms.Courses
             this.btnEditCourse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnEditCourse.Image")));
-            this.btnEditCourse.Location = new System.Drawing.Point(587, 67);
+            this.btnEditCourse.Location = new System.Drawing.Point(615, 67);
             this.btnEditCourse.Name = "btnEditCourse";
             this.btnEditCourse.Size = new System.Drawing.Size(41, 37);
             this.btnEditCourse.TabIndex = 38;
@@ -113,7 +109,7 @@ namespace eCourses.WinUI.Forms.Courses
             // 
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtSearch.Location = new System.Drawing.Point(70, 80);
+            this.txtSearch.Location = new System.Drawing.Point(42, 80);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(275, 24);
@@ -133,12 +129,11 @@ namespace eCourses.WinUI.Forms.Courses
             this.txtName,
             this.Language,
             this.DateCreated,
-            this.Price,
-            this.Description});
-            this.dgvCourses.Location = new System.Drawing.Point(70, 119);
+            this.Price});
+            this.dgvCourses.Location = new System.Drawing.Point(42, 119);
             this.dgvCourses.Name = "dgvCourses";
             this.dgvCourses.ReadOnly = true;
-            this.dgvCourses.Size = new System.Drawing.Size(605, 276);
+            this.dgvCourses.Size = new System.Drawing.Size(661, 276);
             this.dgvCourses.TabIndex = 44;
             // 
             // CourseID
@@ -180,32 +175,20 @@ namespace eCourses.WinUI.Forms.Courses
             this.Price.ReadOnly = true;
             this.Price.Width = 40;
             // 
-            // Description
-            // 
-            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Description.DataPropertyName = "Description";
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            // 
             // cbSubcategories
             // 
             this.cbSubcategories.FormattingEnabled = true;
-            this.cbSubcategories.Location = new System.Drawing.Point(70, 42);
+            this.cbSubcategories.Location = new System.Drawing.Point(42, 44);
             this.cbSubcategories.Name = "cbSubcategories";
             this.cbSubcategories.Size = new System.Drawing.Size(129, 21);
             this.cbSubcategories.TabIndex = 45;
             this.cbSubcategories.SelectedIndexChanged += new System.EventHandler(this.cbSubcategories_SelectedIndexChanged);
             // 
-            // courseListVMBindingSource
-            // 
-            this.courseListVMBindingSource.DataSource = typeof(eCourses.Model.ViewModels.CourseListVM);
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(70, 401);
+            this.button1.Location = new System.Drawing.Point(42, 401);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(198, 29);
             this.button1.TabIndex = 46;
@@ -230,7 +213,6 @@ namespace eCourses.WinUI.Forms.Courses
             this.Size = new System.Drawing.Size(740, 559);
             this.Load += new System.EventHandler(this.CourseList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourses)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.courseListVMBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,13 +228,11 @@ namespace eCourses.WinUI.Forms.Courses
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.DataGridView dgvCourses;
         private System.Windows.Forms.ComboBox cbSubcategories;
-        private System.Windows.Forms.BindingSource courseListVMBindingSource;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn CourseID;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Language;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateCreated;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
     }
 }

@@ -36,7 +36,7 @@
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition Width="400"/>
+                                        <ColumnDefinition Width="600"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
@@ -73,7 +73,7 @@
                                                 </FormattedString>
                                             </Label.FormattedText>
                                         </Label>
-                                        <Label Text="{Binding Price, StringFormat='Price: ${0:F0}'}"
+                                        <Label Text="{Binding Price, StringFormat='Price: ${0:F2}'}"
                                                LineBreakMode="NoWrap"
                                                Padding="0, 0, 0, 10"
                                                FontSize="12" 

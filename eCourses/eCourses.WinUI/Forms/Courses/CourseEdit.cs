@@ -30,7 +30,7 @@ namespace eCourses.WinUI.Forms.Courses
 
         private async void CourseEdit_Load(object sender, EventArgs e)
         {
-          
+
             var course = await courseService.GetById<MCourse>(_courseID);
             var subcategory = await subcategoryService.GetById<MSubcategory>(course.SubcategoryID);
             txtCourseName.Text = course.Name;
@@ -54,21 +54,22 @@ namespace eCourses.WinUI.Forms.Courses
             var subcategory = await subcategoryService.GetById<MSubcategory>(course.SubcategoryID);
             if (ValidateChildren())
             {
-               
+
                 var request = new CourseUpsertRequest
                 {
                     Name = txtCourseName.Text,
                     Language = txtLanguage.Text,
                     DateCreated = DateTime.Now,
-                    Price = Convert.ToInt32(txtPrice.Text),
-                    UserID = _user.UserID,
+                    Price = float.Parse(txtPrice.Text),
+                    //Convert.ToInt32(txtPrice.Text),
+                    UserID = course.UserID,
                     Description = txtDescription.Text,
                     Image = pbCourseImage.Image != null ? ImageHelper.SystemDrawingToByteArray(pbCourseImage.Image) : null,
                     SubcategoryID = subcategory.SubcategoryID,
                     URL = txtURL.Text
 
                 };
-                await courseService.Update<MCourse>(_courseID,request);
+                await courseService.Update<MCourse>(_courseID, request);
                 MessageBox.Show("Course updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 PanelHelper.SwapPanels(this.Parent, this, new CourseList(_user, course));
             }
@@ -92,7 +93,6 @@ namespace eCourses.WinUI.Forms.Courses
                 errorProvider1.SetError(txtURL, null);
             }
         }
-
         private void txtCourseName_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtCourseName.Text))
@@ -105,7 +105,7 @@ namespace eCourses.WinUI.Forms.Courses
                 errorProvider1.SetError(txtCourseName, null);
             }
         }
-      
+
         private void txtLanguage_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtLanguage.Text))
@@ -119,11 +119,21 @@ namespace eCourses.WinUI.Forms.Courses
             }
         }
 
+        bool DoesItContainDot(char c)
+        {
+            if (c!=',')
+            {
+                return true;
+            }
+            return false;
+        }
+
+
         bool IsDigitsOnly(string str)
         {
             foreach (char c in str)
             {
-                if (c < '0' || c > '9')
+                if ((c < '0' || c > '9') && DoesItContainDot(c))
                     return false;
             }
 
@@ -144,7 +154,7 @@ namespace eCourses.WinUI.Forms.Courses
                 if (IsDigitsOnly(price) == false)
                 {
                     e.Cancel = true;
-                    errorProvider1.SetError(txtPrice, "You can't use letters!");
+                    errorProvider1.SetError(txtPrice, "You must use decimal numbers with comma or integer numbers!");
                 }
                 else
                 {

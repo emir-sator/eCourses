@@ -35,9 +35,9 @@ namespace eCourses.WinUI.Forms.Categories
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnDetails = new System.Windows.Forms.Button();
             this.dgvCategories = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
             this.CategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,26 +96,11 @@ namespace eCourses.WinUI.Forms.Categories
             this.dgvCategories.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CategoryID,
             this.txtName});
-            this.dgvCategories.Location = new System.Drawing.Point(300, 117);
+            this.dgvCategories.Location = new System.Drawing.Point(250, 124);
             this.dgvCategories.Name = "dgvCategories";
             this.dgvCategories.ReadOnly = true;
-            this.dgvCategories.Size = new System.Drawing.Size(147, 269);
+            this.dgvCategories.Size = new System.Drawing.Size(235, 269);
             this.dgvCategories.TabIndex = 35;
-            // 
-            // CategoryID
-            // 
-            this.CategoryID.DataPropertyName = "CategoryID";
-            this.CategoryID.HeaderText = "CategoryID";
-            this.CategoryID.Name = "CategoryID";
-            this.CategoryID.ReadOnly = true;
-            this.CategoryID.Visible = false;
-            // 
-            // txtName
-            // 
-            this.txtName.DataPropertyName = "Name";
-            this.txtName.HeaderText = "Name";
-            this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
             // 
             // label2
             // 
@@ -127,6 +112,22 @@ namespace eCourses.WinUI.Forms.Categories
             this.label2.TabIndex = 36;
             this.label2.Text = "*Once you delete a category, all courses, subcategories and other data related to" +
     " it are going to be deleted!";
+            // 
+            // CategoryID
+            // 
+            this.CategoryID.DataPropertyName = "CategoryID";
+            this.CategoryID.HeaderText = "CategoryID";
+            this.CategoryID.Name = "CategoryID";
+            this.CategoryID.ReadOnly = true;
+            this.CategoryID.Visible = false;
+            // 
+            // txtName
+            // 
+            this.txtName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txtName.DataPropertyName = "Name";
+            this.txtName.HeaderText = "Name";
+            this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
             // 
             // CategoryList
             // 

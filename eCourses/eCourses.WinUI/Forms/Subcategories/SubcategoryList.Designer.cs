@@ -87,10 +87,10 @@ namespace eCourses.WinUI.Forms.Subcategories
             this.SubcategoryID,
             this.CategoryID,
             this.CategoryName});
-            this.dgvSubcategories.Location = new System.Drawing.Point(214, 116);
+            this.dgvSubcategories.Location = new System.Drawing.Point(187, 116);
             this.dgvSubcategories.Name = "dgvSubcategories";
             this.dgvSubcategories.ReadOnly = true;
-            this.dgvSubcategories.Size = new System.Drawing.Size(282, 264);
+            this.dgvSubcategories.Size = new System.Drawing.Size(352, 264);
             this.dgvSubcategories.TabIndex = 40;
             // 
             // label1
@@ -130,6 +130,7 @@ namespace eCourses.WinUI.Forms.Subcategories
             // 
             // CategoryName
             // 
+            this.CategoryName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.CategoryName.DataPropertyName = "CategoryName";
             this.CategoryName.HeaderText = "Category";
             this.CategoryName.Name = "CategoryName";

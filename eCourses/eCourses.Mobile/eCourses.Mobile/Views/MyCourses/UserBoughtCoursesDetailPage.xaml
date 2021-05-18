@@ -32,7 +32,7 @@
             </StackLayout>
             <StackLayout >
                 <Label HorizontalOptions="Center"
-                   FontSize="20">
+                   FontSize="20" WidthRequest="350">
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>

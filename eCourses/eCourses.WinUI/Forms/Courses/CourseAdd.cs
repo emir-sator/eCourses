@@ -158,11 +158,21 @@ namespace eCourses.WinUI.Forms.Courses
             }
         }
 
+        bool DoesItContainDot(char c)
+        {
+            if (c != ',')
+            {
+                return true;
+            }
+            return false;
+        }
+
+
         bool IsDigitsOnly(string str)
         {
             foreach (char c in str)
             {
-                if (c < '0' || c > '9')
+                if ((c < '0' || c > '9') && DoesItContainDot(c))
                     return false;
             }
 
@@ -183,7 +193,7 @@ namespace eCourses.WinUI.Forms.Courses
                 if (IsDigitsOnly(price) == false)
                 {
                     e.Cancel = true;
-                    errorProvider1.SetError(txtPrice, "You can't use letters!");
+                    errorProvider1.SetError(txtPrice, "You must use decimal numbers with comma or integer numbers!");
                 }
                 else
                 {
