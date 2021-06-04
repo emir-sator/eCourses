@@ -27,7 +27,7 @@ Tools and technologies that I used to create applications are:
 
          •	C# programming language
 
-         •	Net Core framework
+         •	.Net Core framework
 
          •	MS SQL Server
 
