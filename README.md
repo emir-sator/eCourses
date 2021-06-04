@@ -1,6 +1,7 @@
 
 eCourses is a project that contains Desktop (Windows forms) and Mobile (Xamarin forms) applications with the main goal of watching video lectures of purchased courses at any time. Also, the project is using Rest API for communication with database and services with Swagger tool (https://swagger.io/) for design and documentation.
 Some of the other functionalities of the eCourses project applications are:
+
      •	User data management
 
      •	Review and manage instructor courses
