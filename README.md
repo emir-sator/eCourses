@@ -24,6 +24,7 @@ Some of the other functionalities of the eCourses project applications are:
      •	Reporting
      
 Tools and technologies that I used to create applications are:
+
      •	C# programming language
 
      •	Net Core framework
